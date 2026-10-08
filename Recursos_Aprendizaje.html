@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITERA - Recursos y Aprendizaje</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="images/Logo_ITERA.jpeg" alt="Logo de ITERA">
+    <span>ITERA</span>
+  </div>
+</header>
+
+<button id="boton-menu">☰</button>
+<nav>
+  <ul id="lista-nav">
+    <li id="nav-inicio"><a href="index.html">Inicio</a></li>
+
+    <li id="nav-calidad" class="tiene-submenu">
+      <button class="boton-submenu">Gestión de la Calidad del Software ▾</button>
+      <ul class="submenu">
+        <li><a href="Calidad.html#fundamentos">Fundamentos de Calidad</a></li>
+        <li><a href="Calidad.html#tecnicas">Técnicas de Aseguramiento de la Calidad</a></li>
+        <li><a href="Calidad.html#herramientas">Herramientas de Calidad</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-procesos" class="tiene-submenu">
+      <button class="boton-submenu">Procesos de Desarrollo de Software ▾</button>
+      <ul class="submenu">
+        <li><a href="Procesos.html#sdlc">Ciclo de Vida del Desarrollo de Software (SDLC)</a></li>
+        <li><a href="Procesos.html#modelos">Modelos Tradicionales</a></li>
+        <li><a href="Procesos.html#agiles">Metodologías Ágiles</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-agiles" class="tiene-submenu">
+      <button class="boton-submenu">Metodologías en Detalle ▾</button>
+      <ul class="submenu">
+        <li><a href="Metodologias.html#scrum">Scrum a detalle</a></li>
+        <li><a href="Metodologias.html#kanban">Kanban a detalle</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-scrum" class="tiene-submenu">
+      <button class="boton-submenu">Recursos y Aprendizaje ▾</button>
+      <ul class="submenu">
+        <li><a href="Recursos_Aprendizaje.html#glosario">Glosario</a></li>
+        <li><a href="Recursos_Aprendizaje.html#faq">Preguntas Frecuentes (FAQ)</a></li>
+        <li><a href="Recursos_Aprendizaje.html#recursos">Enlaces de Interés</a></li>
+        <li><a href="Recursos_Aprendizaje.html#ejercicios">Ejercicios y Casos Prácticos</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-recursos" class="tiene-submenu">
+      <button class="boton-submenu">Módulo de Diagnóstico y Comparación ▾</button>
+      <ul class="submenu">
+        <li><a href="Modulo_Diagnostico_Comparacion.html#comparador">Comparador Interactivo de Metodologías</a></li>
+        <li><a href="Modulo_Diagnostico_Comparacion.html#encuesta">Encuesta de Preferencias Metodológicas</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-sobre"><a href="Sobre_nosotros.html">Sobre Nosotros</a></li>
+    <li id="nav-contacto"><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+
+<main>
+
+  <!-- ============ US-12: GLOSARIO ============ -->
+  <section id="glosario">
+    <h1>Glosario</h1>
+    <input type="text" id="buscador" placeholder="Buscar término..." onkeyup="buscarTermino()">
+    <div class="letras" id="indice-letras"></div>
+
+    <div id="lista-terminos">
+        <div class="termino"><h3>A · Análisis Estático</h3><p>Revisión del código fuente sin ejecutarlo para identificar vulnerabilidades, errores de lógica o violaciones de estándares de programación.</p></div>
+        <div class="termino"><h3>A · Agilidad</h3><p>Capacidad de un equipo o proceso de desarrollo de adaptarse rápidamente a cambios en los requisitos y necesidades del proyecto, priorizando la entrega continua de valor y la mejora del producto.</p></div>
+        <div class="termino"><h3>A · Aseguramiento de calidad</h3><p>Proceso global para definir cómo puede lograrse la calidad del software y cómo la organización que desarrolla el software sabe que éste satisface el nivel de calidad requerido.</p></div>
+
+        <div class="termino"><h3>B · Bug</h3><p>Defecto, error o fallo en el código fuente que causa un comportamiento inesperado o incorrecto en el sistema.</p></div>
+
+        <div class="termino"><h3>C · Caja Blanca</h3><p>Técnica de pruebas que examina la estructura interna, la arquitectura y las instrucciones lógicas del código.</p></div>
+        <div class="termino"><h3>C · Caja Negra</h3><p>Técnica de pruebas centrada en validar las entradas y salidas del software sin analizar su implementación interna.</p></div>
+        <div class="termino"><h3>C · Caso de Prueba</h3><p>Conjunto de condiciones, entradas, acciones y resultados esperados definidos para comprobar el comportamiento de una funcionalidad del software.</p></div>
+        <div class="termino"><h3>C · Calidad de Software</h3><p>Grado en que un sistema o componente satisface los requerimientos especificados y las necesidades de los usuarios.</p></div>
+
+        <div class="termino"><h3>D · Daily Scrum</h3><p>Evento diario breve de sincronización en el marco Scrum para revisar el avance e identificar bloqueos en el equipo.</p></div>
+        <div class="termino"><h3>D · Desarrolladores</h3><p>Profesionales responsables de analizar, diseñar, implementar, modificar y mantener el código necesario para construir y evolucionar un sistema de software.</p></div>
+        <div class="termino"><h3>D · Detección de fallas</h3><p>Uso de procesos y comprobación en tiempo de operación para detectar y eliminar fallas en el desarrollo de un programa antes de que den por resultado una falla en la operación del sistema.</p></div>
+        <div class="termino"><h3>D · Diseñador</h3><p>Encargado de realizar la interfaz, estética, la experiencia de usuario y el flujo de funcionamiento del sistema, procurando que resulte comprensible, accesible y usable.</p></div>
+
+        <div class="termino"><h3>E · Entrega</h3><p>Versión de un sistema de software que se pone a disposición de los clientes del sistema.</p></div>
+        <div class="termino"><h3>E · Entrega de valor</h3><p>Entrega temprana del proyecto, que posee un conjunto parcial de funcionalidades.</p></div>
+        <div class="termino"><h3>E · Error</h3><p>Acción humana o condición incorrecta que puede introducir un defecto en el software y provocar posteriormente una falla durante su ejecución.</p></div>
+
+        <div class="termino"><h3>F · Falla</h3><p>Manifestación observable de un defecto durante la ejecución de un sistema, que provoca que su comportamiento difiera del esperado.</p></div>
+        <div class="termino"><h3>F · Funcionalidad</h3><p>Capacidad o comportamiento que un sistema debe proporcionar para satisfacer un requerimiento o una necesidad del usuario.</p></div>
+
+        <div class="termino"><h3>G · Gestión de Requerimientos</h3><p>Proceso de administrar los cambios a los requerimientos para asegurarse de que los cambios realizados se analizan adecuadamente y se rastrean a lo largo del sistema.</p></div>
+        <div class="termino"><h3>G · Gestión del Riesgo</h3><p>Proceso de identificación de riesgos, valoración de su severidad, planeación de medidas para implementar en caso de que surjan riesgos, y monitorización del software y el proceso para detectar riesgos.</p></div>
+
+        <div class="termino"><h3>I · Incremento</h3><p>Producto utilizable y de valor que combina las funcionalidades desarrolladas en el Sprint actual con las de iteraciones anteriores.</p></div>
+        <div class="termino"><h3>I · Interfaz</h3><p>Especificación de los atributos y las operaciones asociados con un componente de software. La interfaz se usa como medio para acceder a la funcionalidad del componente.</p></div>
+        <div class="termino"><h3>I · ISO 9000/9001</h3><p>Conjunto de estándares o normas para procesos de gestión de la calidad definidos por International Standards Organization (ISO). ISO 9001 puede usarse para certificar los procesos de gestión de calidad en una organización.</p></div>
+
+        <div class="termino"><h3>K · Kanban</h3><p>Marco de trabajo ágil y visual diseñado para gestionar el flujo de trabajo, limitando el trabajo en proceso (WIP) y promoviendo la mejora continua. Hace visible el progreso, identifica cuellos de botella y optimiza la eficiencia.</p></div>
+
+        <div class="termino"><h3>M · Manifiesto Agil</h3><p>Conjunto de principios que incluyen las ideas subyacentes de los métodos ágiles de desarrollo de software.</p></div>
+        <div class="termino"><h3>M · Modelo/modelo de proceso</h3><p>Representación abstracta de un proceso que muestra las actividades implicadas, los artefactos usados, las restricciones aplicadas y los roles de las personas que lo ejecutan.</p></div>
+        <div class="termino"><h3>M · Método estructurado</h3><p>Método de diseño de software que define los modelos del sistema, las reglas y lineamientos para dichos modelos, y el proceso a seguir.</p></div>
+        <div class="termino"><h3>M · Métodos ágiles</h3><p>Métodos de desarrollo de software orientados a una entrega rápida, en incrementos y con mínima documentación y burocracia. El foco del desarrollo está en el código en sí.</p></div>
+
+        <div class="termino"><h3>P · Product Backlog</h3><p>Lista priorizada y dinámica que reúne todos los requerimientos, funcionalidades y tareas pendientes de un proyecto.</p></div>
+        <div class="termino"><h3>P · Programador</h3><p>Profesional encargado de implementar y mantener el código fuente de un sistema de software a partir de los requerimientos y diseños definidos.</p></div>
+        <div class="termino"><h3>P · Prueba de Software</h3><p>Proceso sistemático de evaluación de un sistema mediante la ejecución de pruebas para detectar defectos y verificar el cumplimiento de los requisitos.</p></div>
+
+        <div class="termino"><h3>R · Retrospectiva</h3><p>Acto de analizar eventos, procesos u obras anteriores con el fin de extraer lecciones, evaluar la trayectoria o celebrar hitos.</p></div>
+        <div class="termino"><h3>R · Requerimiento</h3><p>Necesidad, condición o capacidad que debe cumplir un sistema para satisfacer las necesidades de sus usuarios o de otras partes interesadas.</p></div>
+        <div class="termino"><h3>R · Riesgo</h3><p>Resultado indeseable que plantea una amenaza al logro de cierto objetivo. Puede amenazar la calendarización o el costo del proceso, o significar que no se logren requerimientos del sistema.</p></div>
+
+        <div class="termino"><h3>S · SDLC</h3><p>Software Development Life Cycle: marco que describe las fases necesarias para planificar, construir, probar, desplegar y mantener software.</p></div>
+        <div class="termino"><h3>S · Sprint</h3><p>Iteración de tiempo fijo en Scrum dentro de la cual se construye un incremento funcional del producto.</p></div>
+        <div class="termino"><h3>S · SCRUM</h3><p>Método de desarrollo ágil basado en sprints: ciclos de desarrollo cortos. Puede usarse como base para gestión de proyectos ágiles.</p></div>
+        <div class="termino"><h3>S · SCRUM master</h3><p>Líder del equipo SCRUM, dirige y corrobora el flujo de trabajo.</p></div>
+        <div class="termino"><h3>S · Seguridad</h3><p>Capacidad de un sistema para protegerse a sí mismo contra intrusión accidental o deliberada. Incluye confidencialidad, integridad y disponibilidad.</p></div>
+
+        <div class="termino"><h3>T · Testing</h3><p>Proceso de evaluación de un sistema de software mediante la realización de pruebas para detectar defectos y verificar que cumple los requisitos.</p></div>
+        <div class="termino"><h3>T · Tester</h3><p>Miembro del equipo de desarrollo que realiza los diferentes procesos que componen al testing.</p></div>
+        <div class="termino"><h3>T · Tolerancia a fallas</h3><p>Capacidad de un sistema para continuar en ejecución incluso después de que ocurran fallas.</p></div>
+        <div class="termino"><h3>T · Trazabilidad</h3><p>Capacidad de relacionar y seguir un requerimiento a través de las diferentes etapas del desarrollo, permitiendo identificar su implementación, pruebas asociadas y resultados.</p></div>
+
+        <div class="termino"><h3>V · Validación</h3><p>Proceso de comprobar que un sistema satisface las necesidades y expectativas del cliente.</p></div>
+        <div class="termino"><h3>V · Verificación</h3><p>Proceso de comprobación de que un sistema satisface sus especificaciones.</p></div>
+
+        <div class="termino"><h3>W · WIP</h3><p>Work in Progress: cantidad de tareas o ítems que se están desarrollando de forma simultánea en un proceso o tablero Kanban.</p></div>
+
+        <div class="termino"><h3>X · XP</h3><p>Abreviatura utilizada comúnmente para Programación Extrema.</p></div>
+    </div>
+    <p id="sin-resultados">Sin resultados. Probá con otro término.</p>
+  </section>
+
+  <!-- ============ US-13: FAQ ============ -->
+  <section id="faq">
+     <h1>Preguntas frecuentes</h1>
+    <p class="intro1">Respuestas a las dudas más comunes. Tocá una pregunta para abrir o cerrar su respuesta.</p>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Qué es un requisito? ¿Quién los define? <span>+</span></button>
+        <p class="respuesta">Un requisito describe qué debe hacer el software o qué características debe tener para satisfacer una necesidad. Los definen 
+            principalmente los usuarios, clientes y personas involucradas en el negocio, con ayuda del equipo de desarrollo para identificar necesidades, restricciones 
+            y posibilidades técnicas.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Qué pasa si como cliente quiero un software pero no sé cómo explicar lo que quiero? <span>+</span></button>
+        <p class="respuesta">Es algo habitual, ya que el cliente generalmente no posee los recursos físicos o teóricos para dar una descripción detallada y "lista 
+            para hacer" de un software. El equipo de desarrollo puede ayudar a descubrir, analizar y transformar la necesidad en requisitos concretos mediante 
+            conversaciones, ejemplos, prototipos y preguntas. El cliente no necesita conocer términos técnicos para explicar su problema, solo debe estar atento a lo 
+            que le presenta el equipo.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Qué es un software escalable? <span>+</span></button>
+        <p class="respuesta">Es un software que puede crecer sin que su funcionamiento o costos se deterioren de manera desproporcionada. Por ejemplo, puede 
+            soportar más usuarios, datos o transacciones sin necesitar una reconstrucción completa.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Qué significa hacer testing? <span>+</span></button>
+        <p class="respuesta">El testing consiste en comprobar sistemáticamente que el software funciona como se espera y detectar errores, comportamientos 
+            inesperados o problemas antes y después de su lanzamiento.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Qué ocurre al lanzar/desplegar un software? <span>+</span></button>
+        <p class="respuesta">El lanzamiento o despliegue en entorno no significa necesariamente que el proyecto haya terminado. El software pasa a utilizarse en 
+            un entorno real, donde puede requerir monitoreo, corrección de errores, soporte, actualizaciones, mantenimiento y nuevas funcionalidades.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Por qué un software de calidad tiende a ser más costoso? <span>+</span></button>
+        <p class="respuesta">Porque la calidad requiere trabajo adicional: buen diseño, pruebas, seguridad, documentación, mantenimiento, infraestructura y 
+            prevención de errores. Se trata de construir una solución que sea confiable y sostenible a largo plazo.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Qué aspectos definen la calidad de un software? ¿Quiénes definen si un software es de calidad o no? <span>+</span></button>
+        <p class="respuesta">La calidad puede evaluarse según aspectos como funcionalidad, confiabilidad, seguridad, usabilidad, rendimiento, mantenibilidad y 
+            compatibilidad. No existe una única persona que determine la calidad: depende de las necesidades y expectativas de los usuarios, el rubro del negocio y 
+            los criterios técnicos establecidos por el equipo.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Cómo se estima cuánto va a tardar el desarrollo de un software? <span>+</span></button>
+        <p class="respuesta">Se analiza qué debe construirse, su complejidad, las dependencias, los riesgos y los recursos disponibles, y a partir de eso se realiza 
+            una estimación. Al principio suele existir mayor incertidumbre, por lo que las estimaciones pueden volverse más precisas a medida que se conoce mejor 
+            el proyecto.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Qué diferencia existe entre verificación y validación de software en la gestión de calidad? <span>+</span></button>
+        <p class="respuesta">Verificación responde a "¿Estamos construyendo el producto correctamente?". Es un proceso enfocado en evaluar si los productos 
+            intermedios del desarrollo cumplen con los requisitos, especificaciones técnicas y estándares definidos. <br/>
+            Validación responde a "¿Estamos construyendo el producto correcto?". Es el proceso final enfocado en confirmar que el sistema completo satisface las 
+            necesidades reales y expectativas del usuario o cliente final en su entorno real.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Cuándo es conveniente elegir un modelo tradicional sobre uno ágil? <span>+</span></button>
+        <p class="respuesta">Los modelos tradicionales resultan convenientes en proyectos donde los requisitos están claros desde el inicio, las normativas 
+            legales exigen documentación exhaustiva y la infraestructura es fija. <br/>
+            Las metodologías ágiles son preferibles en proyectos innovadores o cambiantes, con alto grado de incertidumbre, donde se requiere entrega acelerada de un MVP y retroalimentación continua de los usuarios.</p>
+    </div>
+
+    <div class="pregunta">
+        <button onclick="togglePregunta(this)">¿Cómo decido qué metodología ágil utilizar? (Kanban, SCRUM, Programación Extrema, etcétera) <span>+</span></button>
+        <p class="respuesta">No existe una metodología universalmente mejor. La elección depende de cómo trabaja el equipo, qué tipo de proyecto se desarrolla, 
+            cuánto cambia el alcance, el nivel de incertidumbre y las necesidades del negocio. Además, pueden combinarse prácticas de distintas metodologías en 
+            lugar de seguir una de forma estricta.</p>
+    </div>
+  </section>
+
+  <!-- ============ US-14: ENLACES ============ -->
+  <section id="recursos">
+        <h1>Enlaces de interés</h1>
+        <p class="intro1">Recursos externos, artículos, libros y organizaciones relevantes. Los enlaces se abren en una pestaña nueva.</p>
+
+        <div class="grilla">
+            <div class="tarjeta">
+            <div class="icono">◉</div>
+            <h3><a href="https://asana.com/es/resources/quality-management" target="_blank" rel="noopener noreferrer" style="color:#fff">Sistema de gestión de calidad: guía completa para empresas</a></h3>
+            <p>Asana</p>
+            <span class="etiqueta">Web</span>
+            </div>
+            <div class="tarjeta">
+            <div class="icono">◉</div>
+            <h3><a href="https://www.iso.org/es/gestion-calidad" target="_blank" rel="noopener noreferrer" style="color:#fff">Gestión de la calidad: el camino hacia la mejora continua</a></h3>
+            <p>ISO</p>
+            <span class="etiqueta">Web</span>
+            </div>
+            <div class="tarjeta">
+            <div class="icono">◉</div>
+            <h3><a href="https://agilemanifesto.org/iso/es/manifesto.html" target="_blank" rel="noopener noreferrer" style="color:#fff">Manifiesto por el desarrollo Ágil de Software</a></h3>
+            <p>Varios autores</p>
+            <span class="etiqueta">Web</span>
+            </div>
+            <div class="tarjeta">
+            <div class="icono">◉</div>
+            <h3><a href="https://aws.amazon.com/es/what-is/sdlc/" target="_blank" rel="noopener noreferrer" style="color:#fff">¿Qué es el SDLC?</a></h3>
+            <p>Amazon AWS</p>
+            <span class="etiqueta">Web</span>
+            </div>
+            <div class="tarjeta">
+            <div class="icono">◉</div>
+            <h3><a href="https://www.hiberus.com/crecemos-contigo/los-estandares-de-calidad-del-software-mas-importantes/" target="_blank" rel="noopener noreferrer" style="color:#fff">Los estándares de calidad del Software más importantes</a></h3>
+            <p>Hiberus Blog</p>
+            <span class="etiqueta">Web</span>
+            </div>
+            <div class="tarjeta">
+            <div class="icono">▤</div>
+            <h3><a href="http://www.cs.uns.edu.ar/~mlg/iap/downloads/Clases%20Teoricas/07_CalidadSW_IAP_2019.pdf" target="_blank" rel="noopener noreferrer" style="color:#fff">Ingeniería de Aplicaciones</a></h3>
+            <p>Dr. María Luján Ganuza</p>
+            <span class="etiqueta">PDF</span>
+            </div>
+            <div class="tarjeta">
+            <div class="icono">▥</div>
+            <h3>Ingeniería de Software - Novena Edición</h3>
+            <p>Ian Sommerville</p>
+            <span class="etiqueta">Libro</span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="JS/main.js"></script>
+<script>
+  // ---------- US-12: buscador y letras ----------
+  const terminos = document.querySelectorAll('#lista-terminos .termino');
+
+  // Índice de letras A-Z
+  const letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
+  const indice = document.getElementById('indice-letras');
+  indice.innerHTML = '<span class="activo-l" onclick="filtrarLetra(\'\', this)">Todas</span>';
+  for (const letra of letras) {
+    indice.innerHTML += '<span onclick="filtrarLetra(\'' + letra + '\', this)">' + letra + '</span>';
+  }
+
+  function buscarTermino() {
+    const texto = document.getElementById('buscador').value.toLowerCase();
+    let visibles = 0;
+    terminos.forEach(function (t) {
+      if (t.textContent.toLowerCase().includes(texto)) {
+        t.style.display = 'block'; visibles++;
+      } else {
+        t.style.display = 'none';
+      }
+    });
+    document.getElementById('sin-resultados').style.display = visibles === 0 ? 'block' : 'none';
+  }
+
+  function filtrarLetra(letra, span) {
+    document.querySelectorAll('#indice-letras span').forEach(s => s.classList.remove('activo-l'));
+    span.classList.add('activo-l');
+    let visibles = 0;
+    terminos.forEach(function (t) {
+      const mostrar = letra === '' || t.querySelector('h3').textContent.startsWith(letra);
+      t.style.display = mostrar ? 'block' : 'none';
+      if (mostrar) visibles++;
+    });
+    document.getElementById('sin-resultados').style.display = visibles === 0 ? 'block' : 'none';
+  }
+
+  // ---------- US-13: acordeón ----------
+  function togglePregunta(boton) {
+    const item = boton.parentElement;
+    const estabaAbierta = item.classList.contains('abierta');
+
+    // Cerrar todas las preguntas
+    document.querySelectorAll('.pregunta').forEach(function (p) {
+      p.classList.remove('abierta');
+      p.querySelector('button span').textContent = '+';
+    });
+
+    // Abrir solo la que se tocó (si estaba cerrada)
+    if (!estabaAbierta) {
+      item.classList.add('abierta');
+      boton.querySelector('span').textContent = '−';
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITERA - Gestión de la Calidad del Software</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="images/Logo_ITERA.jpeg" alt="Logo de ITERA">
+    <span>ITERA</span>
+  </div>
+</header>
+
+<button id="boton-menu">☰</button>
+<nav>
+  <ul id="lista-nav">
+    <li id="nav-inicio"><a href="index.html">Inicio</a></li>
+
+    <li id="nav-calidad" class="tiene-submenu">
+      <button class="boton-submenu">Gestión de la Calidad del Software ▾</button>
+      <ul class="submenu">
+        <li><a href="Calidad.html#fundamentos">Fundamentos de Calidad</a></li>
+        <li><a href="Calidad.html#tecnicas">Técnicas de Aseguramiento de la Calidad</a></li>
+        <li><a href="Calidad.html#herramientas">Herramientas de Calidad</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-procesos" class="tiene-submenu">
+      <button class="boton-submenu">Procesos de Desarrollo de Software ▾</button>
+      <ul class="submenu">
+        <li><a href="Procesos.html#sdlc">Ciclo de Vida del Desarrollo de Software (SDLC)</a></li>
+        <li><a href="Procesos.html#modelos">Modelos Tradicionales</a></li>
+        <li><a href="Procesos.html#agiles">Metodologías Ágiles</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-agiles" class="tiene-submenu">
+      <button class="boton-submenu">Metodologías en Detalle ▾</button>
+      <ul class="submenu">
+        <li><a href="Metodologias.html#scrum">Scrum a detalle</a></li>
+        <li><a href="Metodologias.html#kanban">Kanban a detalle</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-scrum" class="tiene-submenu">
+      <button class="boton-submenu">Recursos y Aprendizaje ▾</button>
+      <ul class="submenu">
+        <li><a href="Recursos_Aprendizaje.html#glosario">Glosario</a></li>
+        <li><a href="Recursos_Aprendizaje.html#faq">Preguntas Frecuentes (FAQ)</a></li>
+        <li><a href="Recursos_Aprendizaje.html#recursos">Enlaces de Interés</a></li>
+        <li><a href="Recursos_Aprendizaje.html#ejercicios">Ejercicios y Casos Prácticos</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-recursos" class="tiene-submenu">
+      <button class="boton-submenu">Módulo de Diagnóstico y Comparación ▾</button>
+      <ul class="submenu">
+        <li><a href="Modulo_Diagnostico_Comparacion.html#comparador">Comparador Interactivo de Metodologías</a></li>
+        <li><a href="Modulo_Diagnostico_Comparacion.html#encuesta">Encuesta de Preferencias Metodológicas</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-sobre"><a href="Sobre_nosotros.html">Sobre Nosotros</a></li>
+    <li id="nav-contacto"><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+
+<main>
+  <!-- ============ US-02: FUNDAMENTOS ============ -->
+  <section id="fundamentos">
+    <h1>Fundamentos de la Calidad</h1>
+    <p class="intro1">La calidad del software trasciende la simple ausencia de errores; representa el grado en que un conjunto de características inherentes a 
+        un sistema cumple con las necesidades y expectativas tanto explícitas como implícitas de los usuarios y partes interesadas. Involucra el cumplimiento 
+        estricto de las especificaciones funcionales, combinado armónicamente con atributos esenciales de calidad interna y externa como la fiabilidad, la 
+        eficiencia operativa, la mantenibilidad del código, la usabilidad de la interfaz y la seguridad de la información.</p>
+
+    <h2>Etapas de la calidad</h2>
+    <div class="grilla">
+      <div class="tarjeta">
+        <div class="icono">✓</div>
+        <h3>Control de calidad</h3>
+        <p>Inspección al 100% del producto final. Elevados costes de inspección, baja participación, departamento separado del de producción.</p>
+      </div>
+      <div class="tarjeta">
+        <div class="icono">☰</div>
+        <h3>Aseguramiento de calidad</h3>
+        <p>Implantación de un sistema de gestión de calidad, con ideas de calidad extendidas a toda la empresa. La calidad como ventaja competitiva.</p>
+      </div>
+      <div class="tarjeta">
+        <div class="icono">★</div>
+        <h3>Calidad total</h3>
+        <p>Búsqueda de alto nivel de calidad con mejora continua y permanente, donde participan todos los departamentos, figura de cliente interno y externo, 
+            olaboración del proveedor y autocontrol del personal.</p>
+      </div>
+      <div class="tarjeta">
+        <div class="icono">◎</div>
+        <h3>Excelencia empresarial</h3>
+        <p>Buscar la satisfacción del cliente y la eficiencia económica en todas las fases de la calidad, utilizando modelos aceptados y eficaces.</p>
+      </div>
+    </div>
+
+    <h2>Métricas de calidad</h2>
+    <p class="intro1">Son indicadores cuantitativos y objetivos utilizados por los equipos de ingeniería para evaluar la eficacia de los procesos de desarrollo y 
+        a excelencia del producto final. Permiten medir y monitorear aspectos clave como la densidad de errores (defectos por mil líneas de código), el volumen 
+        de código defectuoso o redundante, el porcentaje de cobertura de pruebas unitarias y el esfuerzo medio requerido para la corrección de incidencias 
+        (MTTR - Mean Time To Repair).</p>
+
+    <h2>Estándares ISO</h2>
+    <button class="boton-iso activo-f" onclick="mostrarIso('iso9126', this)">ISO/IEC 9126</button>
+    <button class="boton-iso" onclick="mostrarIso('iso25000', this)">ISO/IEC 25000</button>
+
+    <div class="tarjeta" style="margin-top:12px">
+      <p id="texto-iso">Modelo histórico de referencia que estableció las bases conceptuales para la evaluación de productos software. Estructuraba la calidad 
+        en seis características principales: </p>
+      <div id="lista-iso">
+        <span class="etiqueta">Funcionalidad</span>
+        <span class="etiqueta">Confiabilidad</span>
+        <span class="etiqueta">Usabilidad</span>
+        <span class="etiqueta">Eficiencia</span>
+        <span class="etiqueta">Mantenibilidad</span>
+        <span class="etiqueta">Portabilidad</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ US-03: TÉCNICAS ============ -->
+  <section id="tecnicas">
+    <h1>Técnicas de Aseguramiento de la Calidad</h1>
+    <p class="intro1">Las pruebas de software buscan defectos antes de que lleguen al usuario. Tóca una tarjeta para ver el detalle.</p>
+
+    <h2>Niveles de prueba</h2>
+    <div class="grilla">
+      <div class="tarjeta tarjeta-flip" onclick="this.classList.toggle('dada-vuelta')">
+        <div class="icono">▣</div><h3>Pruebas Unitarias (Unit Testing)</h3>
+        <p>Primer nivel de verificación en la pirámide de pruebas. Evalúan de manera aislada componentes mínimos del sistema (funciones, métodos o clases) 
+            para comprobar que la lógica interna funcione exactamente como fue diseñada.</p>
+        <p class="detalle">Se ejecutan sin depender de la base de datos, servicios externos u otros componentes, utilizando dobles de prueba cuando es necesario.</p>
+      </div>
+      <div class="tarjeta tarjeta-flip" onclick="this.classList.toggle('dada-vuelta')">
+        <div class="icono">⇄</div><h3>Pruebas de Integración (Integration Testing)</h3>
+        <p>Evalúan la interacción, la interfaz lógica y la transferencia de datos entre módulos o servicios previamente probados por separado.</p>
+        <p class="detalle">Su objetivo es detectar fallos en la comunicación entre componentes internos, servicios web externos, bases de datos o APIs de terceros.</p>
+      </div>
+      <div class="tarjeta tarjeta-flip" onclick="this.classList.toggle('dada-vuelta')">
+        <div class="icono">☰</div><h3>Pruebas de Sistema (System Testing)</h3>
+        <p>Validan la plataforma de software completa, ensamblada e integrada en un entorno similar al de producción.</p>
+        <p class="detalle">Verifican el cumplimiento global de los requerimientos, abarcando aspectos funcionales (flujos de trabajo) y no funcionales 
+            (rendimiento, carga, seguridad).</p>
+      </div>
+    </div>
+
+    <h2>Tipos de prueba</h2>
+    <div class="grilla">
+      <div class="tarjeta tarjeta-flip" onclick="this.classList.toggle('dada-vuelta')">
+        <div class="icono">■</div><h3>Caja Negra (Black-Box Testing)</h3>
+        <p>Estrategia enfocada en verificar las entradas enviadas al sistema y analizar las salidas obtenidas frente a las especificaciones esperadas.</p>
+        <p class="detalle">El evaluador ignora la estructura interna del código y se centra en el comportamiento funcional externo desde la perspectiva del usuario.</p>
+      </div>
+      <div class="tarjeta tarjeta-flip" onclick="this.classList.toggle('dada-vuelta')">
+        <div class="icono">□</div><h3>Caja Blanca (White-Box Testing)</h3>
+        <p>Examina la estructura interna, la arquitectura lógica y la implementación del código fuente.</p>
+        <p class="detalle">Requiere habilidades de programación para diseñar casos que garanticen la cobertura de caminos lógicos, bucles, bifurcaciones y 
+            manejo de excepciones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ US-04: HERRAMIENTAS ============ -->
+  <section id="herramientas">
+    <h1>Herramientas de Calidad</h1>
+    <p class="intro1">Las herramientas de calidad permiten facilitar y organizar distintas actividades relacionadas con el desarrollo y la validación de software. 
+        Entre las principales se encuentran:</p>
+
+    <button class="boton-filtro activo-f" onclick="filtrar('todas', this)">Todas</button>
+    <button class="boton-filtro" onclick="filtrar('gestion', this)">Gestión de pruebas</button>
+    <button class="boton-filtro" onclick="filtrar('defectos', this)">Seguimiento de defectos</button>
+    <button class="boton-filtro" onclick="filtrar('analisis', this)">Análisis de calidad</button>
+
+    <div class="grilla" style="margin-top:16px" id="lista-herramientas">
+      <div class="tarjeta item-herramienta" data-cat="gestion">
+        <div class="icono">☰</div><h3>Test Management</h3>
+        <p>Herramientas destinadas a gestionar y organizar las actividades de prueba, incluyendo casos de prueba, ejecuciones, resultados y evidencias, permitiendo evaluar el comportamiento del sistema y detectar posibles problemas.</p>
+        <span class="etiqueta">Gestión de pruebas</span>
+      </div>
+      <div class="tarjeta item-herramienta" data-cat="defectos">
+        <div class="icono">⚑</div><h3>Bug Trackers</h3>
+        <p>Herramientas utilizadas para registrar, organizar y gestionar errores o incidencias detectadas durante el desarrollo y las pruebas de testeo.</p>
+        <span class="etiqueta">Seguimiento de defectos</span>
+      </div>
+      <div class="tarjeta item-herramienta" data-cat="analisis">
+        <div class="icono">✧</div><h3>Linters</h3>
+        <p>Herramientas que analizan el código fuente para identificar errores, inconsistencias y posibles incumplimientos de estándares o buenas prácticas que puedan afectar la calidad y mantenibilidad del software.</p>
+        <span class="etiqueta">Análisis de calidad</span>
+      </div>
+      <div class="tarjeta item-herramienta" data-cat="defectos">
+        <div class="icono">✎</div><h3>Seguimiento de Defectos</h3>
+        <p>El seguimiento de defectos permite registrar y controlar los problemas encontrados durante el desarrollo y las pruebas del software. La información asociada a cada defecto puede incluir su descripción, prioridad, estado, responsable y evolución hasta su resolución. Los Bug Trackers son las principales herramientas utilizadas para esta actividad.</p>
+        <span class="etiqueta">Seguimiento de defectos</span>
+      </div>
+      <div class="tarjeta item-herramienta" data-cat="analisis">
+        <div class="icono">▥</div><h3>Análisis de Calidad</h3>
+        <p>El análisis de calidad permite evaluar diferentes aspectos del software para identificar errores, inconsistencias y oportunidades de mejora. Su objetivo es detectar problemas de manera temprana y verificar el cumplimiento de estándares y buenas prácticas.</p>
+        <span class="etiqueta">Análisis de calidad</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="JS/main.js"></script>
+<script>
+  // ---------- US-02: pestañas de estándares ISO ----------
+  function mostrarIso(cual, boton) {
+    document.querySelectorAll('.boton-iso').forEach(b => b.classList.remove('activo-f'));
+    boton.classList.add('activo-f');
+    if (cual === 'iso9126') {
+      document.getElementById('texto-iso').textContent =
+        'Modelo histórico de referencia que estableció las bases conceptuales para la evaluación de productos software. Estructuraba la calidad en seis características principales. Cada una se desglosaba en subcaracterísticas específicas, y fue el marco conceptual predominante en la industria durante décadas:';
+      document.getElementById('lista-iso').innerHTML =
+        '<span class="etiqueta">Funcionalidad</span> <span class="etiqueta">Confiabilidad</span> <span class="etiqueta">Usabilidad</span> <span class="etiqueta">Eficiencia</span> <span class="etiqueta">Mantenibilidad</span> <span class="etiqueta">Portabilidad</span>';
+    } else {
+      document.getElementById('texto-iso').textContent =
+        'Familia de normas internacionales (SQuaRE - Software Product Quality Requirements and Evaluation) que reemplaza, reorganiza y expande los conceptos de la ISO/IEC 9126. Estructura la evaluación de la calidad en cinco divisiones: Gestión de la Calidad, Modelo de Calidad, Medición de Calidad, Requisitos de Calidad y Evaluación de Calidad. Refuerza criterios como la compatibilidad e interoperabilidad entre sistemas, la seguridad de los datos y la medición de la satisfacción del usuario:';
+      document.getElementById('lista-iso').innerHTML =
+        '<span class="etiqueta">Gestión de la Calidad</span> <span class="etiqueta">Modelo de Calidad</span> <span class="etiqueta">Medición de Calidad</span> <span class="etiqueta">Requisitos de Calidad</span> <span class="etiqueta">Evaluación de Calidad</span>';
+    }
+  }
+
+
+  // ---------- US-04: filtro de herramientas ----------
+  function filtrar(categoria, boton) {
+    document.querySelectorAll('.boton-filtro').forEach(b => b.classList.remove('activo-f'));
+    boton.classList.add('activo-f');
+    document.querySelectorAll('.item-herramienta').forEach(function (tarjeta) {
+      if (categoria === 'todas' || tarjeta.dataset.cat === categoria) {
+        tarjeta.style.display = 'block';
+      } else {
+        tarjeta.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>

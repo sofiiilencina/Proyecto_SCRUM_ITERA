@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITERA - Contacto</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="images/Logo_ITERA.jpeg" alt="Logo de ITERA">
+    <span>ITERA</span>
+  </div>
+</header>
+
+<button id="boton-menu">☰</button>
+<nav>
+  <ul id="lista-nav">
+    <li id="nav-inicio"><a href="index.html">Inicio</a></li>
+
+    <li id="nav-calidad" class="tiene-submenu">
+      <button class="boton-submenu">Gestión de la Calidad del Software ▾</button>
+      <ul class="submenu">
+        <li><a href="Calidad.html#fundamentos">Fundamentos de Calidad</a></li>
+        <li><a href="Calidad.html#tecnicas">Técnicas de Aseguramiento de la Calidad</a></li>
+        <li><a href="Calidad.html#herramientas">Herramientas de Calidad</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-procesos" class="tiene-submenu">
+      <button class="boton-submenu">Procesos de Desarrollo de Software ▾</button>
+      <ul class="submenu">
+        <li><a href="Procesos.html#sdlc">Ciclo de Vida del Desarrollo de Software (SDLC)</a></li>
+        <li><a href="Procesos.html#modelos">Modelos Tradicionales</a></li>
+        <li><a href="Procesos.html#agiles">Metodologías Ágiles</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-agiles" class="tiene-submenu">
+      <button class="boton-submenu">Metodologías en Detalle ▾</button>
+      <ul class="submenu">
+        <li><a href="Metodologias.html#scrum">Scrum a detalle</a></li>
+        <li><a href="Metodologias.html#kanban">Kanban a detalle</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-scrum" class="tiene-submenu">
+      <button class="boton-submenu">Recursos y Aprendizaje ▾</button>
+      <ul class="submenu">
+        <li><a href="Recursos_Aprendizaje.html#glosario">Glosario</a></li>
+        <li><a href="Recursos_Aprendizaje.html#faq">Preguntas Frecuentes (FAQ)</a></li>
+        <li><a href="Recursos_Aprendizaje.html#recursos">Enlaces de Interés</a></li>
+        <li><a href="Recursos_Aprendizaje.html#ejercicios">Ejercicios y Casos Prácticos</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-recursos" class="tiene-submenu">
+      <button class="boton-submenu">Módulo de Diagnóstico y Comparación ▾</button>
+      <ul class="submenu">
+        <li><a href="Modulo_Diagnostico_Comparacion.html#comparador">Comparador Interactivo de Metodologías</a></li>
+        <li><a href="Modulo_Diagnostico_Comparacion.html#encuesta">Encuesta de Preferencias Metodológicas</a></li>
+      </ul>
+    </li>
+
+    <li id="nav-sobre"><a href="Sobre_nosotros.html">Sobre Nosotros</a></li>
+    <li id="nav-contacto"><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+
+<main>
+  <div class="recuadro-contacto">
+    <h1>Contacto</h1>
+
+    <form id="formulario-contacto" onsubmit="return validarFormulario()" novalidate>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" placeholder="Ana Pérez">
+      <p class="error" id="error-nombre">El nombre es obligatorio.</p>
+
+      <label for="correo">Correo electrónico</label>
+      <input type="text" id="correo" placeholder="ana@ejemplo.com">
+      <p class="error" id="error-correo">Ingresá un correo válido, por ejemplo nombre@dominio.com</p>
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" placeholder="Hola, me gustaría sugerir un tema..."></textarea>
+      <p class="error" id="error-mensaje">El mensaje es obligatorio.</p>
+
+      <button type="submit" id="boton-enviar">Enviar</button>
+      <p id="mensaje-confirmacion">¡Gracias! Recibimos tu mensaje.</p>
+    </form>
+  </div>
+</main>
+
+<script src="JS/main.js"></script>
+<script>
+  // ---------- US-17: validación del formulario ----------
+  function validarFormulario() {
+    let valido = true;
+
+    const nombre = document.getElementById('nombre');
+    const correo = document.getElementById('correo');
+    const mensaje = document.getElementById('mensaje');
+
+    // Campo obligatorio: nombre
+    if (nombre.value.trim() === '') {
+      document.getElementById('error-nombre').style.display = 'block';
+      nombre.classList.add('borde-rojo');
+      valido = false;
+    } else {
+      document.getElementById('error-nombre').style.display = 'none';
+      nombre.classList.remove('borde-rojo');
+    }
+
+    // Formato correcto de correo (expresión regular básica)
+    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexCorreo.test(correo.value.trim())) {
+      document.getElementById('error-correo').style.display = 'block';
+      correo.classList.add('borde-rojo');
+      valido = false;
+    } else {
+      document.getElementById('error-correo').style.display = 'none';
+      correo.classList.remove('borde-rojo');
+    }
+
+    // Campo obligatorio: mensaje
+    if (mensaje.value.trim() === '') {
+      document.getElementById('error-mensaje').style.display = 'block';
+      mensaje.classList.add('borde-rojo');
+      valido = false;
+    } else {
+      document.getElementById('error-mensaje').style.display = 'none';
+      mensaje.classList.remove('borde-rojo');
+    }
+
+    // Mensaje de confirmación en pantalla
+    if (valido) {
+      document.getElementById('mensaje-confirmacion').style.display = 'block';
+      document.getElementById('formulario-contacto').reset();
+      return false; // evita que se recargue la página
+    } else {
+      document.getElementById('mensaje-confirmacion').style.display = 'none';
+      return false;
+    }
+  }
+</script>
+</body>
+</html>
