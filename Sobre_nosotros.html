@@ -86,39 +86,90 @@
       
 
       <div class="grilla">
-        <div class="tarjeta perfil">
-          <div class="circulo">☺</div>
+        <div class="tarjeta perfil" data-nombre="Lencina Sofía" data-rol="Programadora" data-desc="Encargada del desarrollo técnico, la constitución del código fuente y de llevar a cabo los requerimientos o “pedidos” del cliente." data-img="images/Sofia_Lencina_avatar.jpeg">
+          <div class="imagen-perfil">
+            <img src="images/Sofia_Lencina_avatar.jpeg" alt="Foto de Lencina Sofía">
+          </div>
           <h3>Lencina Sofía</h3>
           <p class="rol">Programadora</p>
-          <p>Encargada del desarrollo técnico, la constitución del código fuente y de llevar a cabo los requerimientos o “pedidos” del cliente.</p>
           <span class="etiqueta">ITERA</span>
         </div>
-        <div class="tarjeta perfil">
-          <div class="circulo">☺</div>
+
+        <div class="tarjeta perfil" data-nombre="Medel Guadalupe" data-rol="Diseñadora" data-desc="Encargada de la maquetación estética y de funciones del sistema. Traslada los gustos y deseos del cliente a una interfaz clara y agradable." data-img="images/Guadalupe_Medel_avatar.jpeg">
+          <div class="imagen-perfil">
+            <img src="images/Guadalupe_Medel_avatar.jpeg" alt="Foto de Medel Guadalupe">
+          </div>
           <h3>Medel Guadalupe</h3>
           <p class="rol">Diseñadora</p>
-          <p>Encargada de la maquetación estética y de funciones del sistema. Traslada los gustos y deseos del cliente a una interfaz clara y agradable.</p>
           <span class="etiqueta">ITERA</span>
         </div>
-        <div class="tarjeta perfil">
-          <div class="circulo">☺</div>
+
+        <div class="tarjeta perfil" data-nombre="Díaz Ailín" data-rol="Tester" data-desc="Encargada de llevar a cabo pruebas de diferentes tipos y niveles, para corroborar el correcto, eficaz y seguro funcionamiento del software." data-img="images/Ailín_Diáz_avatar.jpeg">
+          <div class="imagen-perfil">
+            <img src="images/Ailín_Diáz_avatar.jpeg" alt="Foto de Díaz Ailín">
+          </div>
           <h3>Díaz Ailín</h3>
           <p class="rol">Tester</p>
-          <p>Encargada de llevar a cabo pruebas de diferentes tipos y niveles, para corroborar el correcto, eficaz y seguro funcionamiento del software.</p>
           <span class="etiqueta">ITERA</span>
         </div>
-        <div class="tarjeta perfil">
-          <div class="circulo">☺</div>
+
+        <div class="tarjeta perfil" data-nombre="Rizzuto Ámbar" data-rol="SCRUM master" data-desc="Encargada de dirigir al equipo de desarrollo y de corroborar una correcta organización y flujo de trabajo, además del cumplimiento de todos los requerimientos dados por el cliente." data-img="images/Ámbar_Rizzuto_avatar.jpeg">
+          <div class="imagen-perfil">
+            <img src="images/Ámbar_Rizzuto_avatar.jpeg" alt="Foto de Rizzuto Ámbar">
+          </div>
           <h3>Rizzuto Ámbar</h3>
           <p class="rol">SCRUM master</p>
-          <p>Encargada de dirigir al equipo de desarrollo y de corroborar una correcta organización y flujo de trabajo, además del cumplimiento de todos los requerimientos dados por el cliente.</p>
           <span class="etiqueta">ITERA</span>
         </div>
       </div>
+
+<!-- Ventana Modal para Expandir Tarjeta -->
+<div id="modal-perfil" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000;">
+  <div style="background: #1a237e; padding: 25px; border-radius: 12px; border: 1px solid rgba(159,216,255,0.3); max-width: 400px; width: 90%; text-align: center; position: relative;">
+    <button id="cerrar-modal" style="position: absolute; top: 10px; right: 15px; background: none; border: none; color: #fff; font-size: 18px; cursor: pointer;">✕</button>
+    <img id="modal-img" src="" alt="" style="width: 120px; height: 120px; object-fit: cover; object-position: center; border-radius: 50%; border: 2px solid #5c6bc0; margin-bottom: 15px;">
+    <h3 id="modal-nombre" style="color: #fff; margin-bottom: 5px; font-size: 18px;"></h3>
+    <p id="modal-rol" style="color: #9fd8ff; font-weight: bold; font-size: 13px; margin-bottom: 12px;"></p>
+    <p id="modal-desc" style="color: #dcdcff; font-size: 12px; line-height: 1.5;"></p>
+  </div>
+</div>
 
     </section>
 </main>
 
 <script src="JS/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tarjetas = document.querySelectorAll('.tarjeta.perfil');
+  const modal = document.getElementById('modal-perfil');
+  const cerrarModal = document.getElementById('cerrar-modal');
+  
+  const modalImg = document.getElementById('modal-img');
+  const modalNombre = document.getElementById('modal-nombre');
+  const modalRol = document.getElementById('modal-rol');
+  const modalDesc = document.getElementById('modal-desc');
+
+  tarjetas.forEach(tarjeta => {
+    tarjeta.addEventListener('click', function () {
+      modalImg.src = this.getAttribute('data-img');
+      modalNombre.textContent = this.getAttribute('data-nombre');
+      modalRol.textContent = this.getAttribute('data-rol');
+      modalDesc.textContent = this.getAttribute('data-desc');
+      
+      modal.style.display = 'flex';
+    });
+  });
+
+  cerrarModal.addEventListener('click', function () {
+    modal.style.display = 'none';
+  });
+
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+</script>
 </body>
 </html>

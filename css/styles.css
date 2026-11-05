@@ -952,3 +952,21 @@ html {
   transition: all 0.2s ease;
   cursor: pointer;
 }
+
+.tarjeta.perfil .imagen-perfil img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.tarjeta.perfil {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta.perfil:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
