@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ITERA - Inicio</title>
+  <title>ITERA - Módulo de Diagnóstico y Comparación</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -71,8 +71,403 @@
 
 <main>
     
+  <!-- US-18: Comparador Interactivo de Metodologías -->
+  <section id="comparador" style="margin-bottom: 50px;">
+    <h1>Comparador de metodologías</h1>
+    <div class="intro1" style="margin-bottom: 20px;">
+      Seleccioná dos o más metodologías y mirá sus características clave lado a lado.
+    </div>
+
+    <div class="tarjeta-modelo" style="margin-bottom: 20px; padding: 15px;">
+      <div id="checkboxes-container" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+        <label style="color: #fff; font-size: 13px; cursor: pointer;"><input type="checkbox" value="cascada" checked> Cascada</label>
+        <label style="color: #fff; font-size: 13px; cursor: pointer;"><input type="checkbox" value="v"> Modelo en V</label>
+        <label style="color: #fff; font-size: 13px; cursor: pointer;"><input type="checkbox" value="scrum" checked> Scrum</label>
+        <label style="color: #fff; font-size: 13px; cursor: pointer;"><input type="checkbox" value="kanban"> Kanban</label>
+        <label style="color: #fff; font-size: 13px; cursor: pointer;"><input type="checkbox" value="xp" checked> XP</label>
+      </div>
+    </div>
+
+    <div id="tabla-comparativa-container" class="tarjeta-modelo" style="overflow-x: auto; padding: 15px;">
+      <!-- Se renderiza mediante JS -->
+    </div>
+  </section>
+
+
+  <!-- US-19: Encuesta de Preferencias Metodológicas (8 Preguntas) -->
+  <section id="encuesta" style="margin-top: 50px;">
+    <h1>Encuesta de preferencias metodológicas</h1>
+    <div class="intro1" style="margin-bottom: 20px;">
+      Respondé unas preguntas sobre tu proyecto y te sugerimos qué metodología se adapta mejor.
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+      
+      <div class="tarjeta-modelo" style="padding: 20px;">
+        <div id="indicador-pregunta" style="font-size: 12px; color: #9fd8ff; margin-bottom: 8px; font-weight: bold;">Pregunta 1 de 8</div>
+        
+        <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 4px; margin-bottom: 20px; overflow: hidden;">
+          <div id="barra-progreso" style="background: #5c6bc0; width: 12.5%; height: 100%; transition: width 0.3s ease;"></div>
+        </div>
+
+        <h3 id="texto-pregunta" style="font-size: 15px; color: #fff; margin-bottom: 15px; line-height: 1.4;">¿Qué tan claros están los requisitos del proyecto?</h3>
+
+        <div id="opciones-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+          <!-- Opciones dinámicas -->
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <button id="btn-anterior" style="background: #283593; color: #fff; border: 1px solid #5c6bc0; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">Anterior</button>
+          <button id="btn-siguiente" style="background: #5c6bc0; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">Siguiente</button>
+        </div>
+      </div>
+
+      <div class="tarjeta-modelo" style="padding: 20px;" id="panel-resultados">
+        <h3 style="color: #9fd8ff; font-size: 16px; margin-bottom: 12px;">Resultado de ejemplo</h3>
+        <p style="font-size: 12px; color: #dcdcff; margin-bottom: 20px;">Según tus respuestas, la mejor coincidencia es:</p>
+        
+        <div id="barras-resultados" style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #fff; margin-bottom: 4px;">
+              <span>Scrum</span><span>0%</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.4); height: 8px; border-radius: 4px; overflow: hidden;">
+              <div style="background: #5c6bc0; width: 0%; height: 100%;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #fff; margin-bottom: 4px;">
+              <span>Kanban</span><span>0%</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.4); height: 8px; border-radius: 4px; overflow: hidden;">
+              <div style="background: #5c6bc0; width: 0%; height: 100%;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #fff; margin-bottom: 4px;">
+              <span>Cascada</span><span>0%</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.4); height: 8px; border-radius: 4px; overflow: hidden;">
+              <div style="background: #5c6bc0; width: 0%; height: 100%;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #fff; margin-bottom: 4px;">
+              <span>Modelo en V</span><span>0%</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.4); height: 8px; border-radius: 4px; overflow: hidden;">
+              <div style="background: #5c6bc0; width: 0%; height: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <p id="sugerencia-final" style="font-size: 12px; color: #ffeb3b; margin-top: 25px; font-weight: bold;">Sugerencia: completá la encuesta para ver el resultado.</p>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
 <script src="JS/main.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  
+  /* --- US-18: COMPARADOR INTERACTIVO --- */
+  const datosMetodologias = {
+    cascada: {
+      nombre: "Cascada",
+      enfoque: "Secuencial por fases",
+      roles: "Analista, programador, tester",
+      flexibilidad: "Baja",
+      entregas: "Una al final",
+      documentacion: "Extensa"
+    },
+    v: {
+      nombre: "Modelo en V",
+      enfoque: "Verificación y validación",
+      roles: "Jefe de proyecto, arquitectos, testers",
+      flexibilidad: "Baja-media",
+      entregas: "Estructurada por etapas",
+      documentacion: "Detallada y trazable"
+    },
+    scrum: {
+      nombre: "Scrum",
+      enfoque: "Iterativo en sprints",
+      roles: "PO, Scrum Master, Developers",
+      flexibilidad: "Alta",
+      entregas: "Cada sprint",
+      documentacion: "Mínima necesaria"
+    },
+    kanban: {
+      nombre: "Kanban",
+      enfoque: "Flujo continuo",
+      roles: "Roles existentes / Flexibles",
+      flexibilidad: "Alta",
+      entregas: "Continua",
+      documentacion: "Tablero visual y políticas"
+    },
+    xp: {
+      nombre: "XP",
+      enfoque: "Prácticas técnicas",
+      roles: "Cliente, programadores",
+      flexibilidad: "Muy alta",
+      entregas: "Muy frecuentes",
+      documentacion: "Mínima"
+    }
+  };
+
+  const checkboxes = document.querySelectorAll('#checkboxes-container input[type="checkbox"]');
+  const contenedorTabla = document.getElementById('tabla-comparativa-container');
+
+  function renderizarComparador() {
+    const seleccionadas = Array.from(checkboxes)
+      .filter(ch => ch.checked)
+      .map(ch => ch.value);
+
+    if (seleccionadas.length === 0) {
+      contenedorTabla.innerHTML = `<p style="text-align: center; color: #ffeb3b; font-size: 13px;">Seleccioná al menos una metodología para ver la comparativa.</p>`;
+      return;
+    }
+
+    const atributos = [
+      { key: 'enfoque', label: 'Enfoque' },
+      { key: 'roles', label: 'Roles' },
+      { key: 'flexibilidad', label: 'Flexibilidad' },
+      { key: 'entregas', label: 'Entregas' },
+      { key: 'documentacion', label: 'Documentación' }
+    ];
+
+    let html = `<table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #fff;">`;
+    
+    html += `<thead><tr style="background: rgba(40,53,147,0.8); border-bottom: 2px solid #5c6bc0;">`;
+    html += `<th style="padding: 10px; text-align: left; width: 120px;">Característica</th>`;
+    seleccionadas.forEach(id => {
+      html += `<th style="padding: 10px; text-align: center;">${datosMetodologias[id].nombre}</th>`;
+    });
+    html += `</tr></thead><tbody>`;
+
+    atributos.forEach((attr, idx) => {
+      const fondoFila = idx % 2 === 0 ? 'background: rgba(40,53,147,0.2);' : 'background: rgba(40,53,147,0.4);';
+      html += `<tr style="${fondoFila} border-bottom: 1px solid rgba(159,216,255,0.1);">`;
+      html += `<td style="padding: 10px; font-weight: bold; color: #9fd8ff;">${attr.label}</td>`;
+      seleccionadas.forEach(id => {
+        html += `<td style="padding: 10px; text-align: center; color: #dcdcff;">${datosMetodologias[id][attr.key]}</td>`;
+      });
+      html += `</tr>`;
+    });
+
+    html += `</tbody></table>`;
+    contenedorTabla.innerHTML = html;
+  }
+
+  checkboxes.forEach(ch => ch.addEventListener('change', renderizarComparador));
+  renderizarComparador();
+
+
+  /* --- US-19: ENCUESTA DE PREFERENCIAS (8 PREGUNTAS) --- */
+  const preguntas = [
+    {
+      pregunta: "¿Qué tan claros están los requisitos del proyecto?",
+      opciones: [
+        { texto: "Están completamente definidos y documentados.", tipo: "A" },
+        { texto: "Están definidos en su mayoría, pero pueden surgir dudas.", tipo: "B" },
+        { texto: "Son parcialmente claros y necesitan ajustes durante el desarrollo.", tipo: "C" },
+        { texto: "Son poco claros y deberán definirse progresivamente.", tipo: "D" }
+      ]
+    },
+    {
+      pregunta: "Los requisitos/prioridades, ¿van a cambiar con frecuencia?",
+      opciones: [
+        { texto: "No, se mantendrán estables durante todo el proyecto.", tipo: "A" },
+        { texto: "Podrían cambiar ocasionalmente.", tipo: "B" },
+        { texto: "Cambiarán con cierta frecuencia según las necesidades.", tipo: "C" },
+        { texto: "Cambiarán constantemente y se requiere una adaptación continua.", tipo: "D" }
+      ]
+    },
+    {
+      pregunta: "¿Cómo preferís organizar el trabajo del equipo?",
+      opciones: [
+        { texto: "Mediante una planificación detallada desde el inicio.", tipo: "A" },
+        { texto: "Mediante etapas con objetivos y plazos definidos.", tipo: "B" },
+        { texto: "Mediante ciclos cortos de trabajo con revisiones frecuentes.", tipo: "C" },
+        { texto: "Mediante una organización flexible que permita cambiar prioridades continuamente.", tipo: "D" }
+      ]
+    },
+    {
+      pregunta: "¿Tu cliente espera entregas de valor tempranas?",
+      opciones: [
+        { texto: "No, espera recibir el producto completo al finalizar el proyecto.", tipo: "A" },
+        { texto: "Sí, solamente algunas entregas parciales.", tipo: "B" },
+        { texto: "Sí, espera recibir versiones funcionales periódicamente.", tipo: "C" },
+        { texto: "Sí, necesita entregas frecuentes para evaluar y solicitar cambios.", tipo: "D" }
+      ]
+    },
+    {
+      pregunta: "¿El proyecto es escalable?",
+      opciones: [
+        { texto: "No, tiene un alcance limitado y difícilmente crecerá.", tipo: "A" },
+        { texto: "Podría incorporar algunas funcionalidades adicionales.", tipo: "B" },
+        { texto: "Se espera que crezca progresivamente en funcionalidades y usuarios.", tipo: "C" },
+        { texto: "Se proyecta un crecimiento considerable que requiere una arquitectura adaptable.", tipo: "D" }
+      ]
+    },
+    {
+      pregunta: "¿Qué nivel de documentación necesitás para el proyecto?",
+      opciones: [
+        { texto: "Documentación exhaustiva de cada etapa, decisión y funcionalidad.", tipo: "A" },
+        { texto: "Documentación técnica detallada de los aspectos principales.", tipo: "B" },
+        { texto: "Documentación básica de funcionalidades, procesos y decisiones importantes.", tipo: "C" },
+        { texto: "Documentación mínima, priorizando el desarrollo y el código funcional.", tipo: "D" }
+      ]
+    },
+    {
+      pregunta: "¿Qué restricciones condicionan el proyecto (plazos, presupuesto, recursos)?",
+      opciones: [
+        { texto: "Existen restricciones estrictas que deben cumplirse sin excepciones.", tipo: "A" },
+        { texto: "Existen restricciones importantes, pero permiten cierta flexibilidad.", tipo: "B" },
+        { texto: "Las restricciones son moderadas y pueden renegociarse.", tipo: "C" },
+        { texto: "Hay pocas restricciones y existe libertad para adaptar el desarrollo.", tipo: "D" }
+      ]
+    },
+    {
+      pregunta: "¿Cómo preferís medir el avance y el éxito del proyecto?",
+      opciones: [
+        { texto: "Mediante el cumplimiento de un plan, cronograma y objetivos previamente establecidos.", tipo: "A" },
+        { texto: "Mediante el cumplimiento de hitos y entregables de cada etapa.", tipo: "B" },
+        { texto: "Mediante funcionalidades terminadas, pruebas y entregas periódicas.", tipo: "C" },
+        { texto: "Mediante la satisfacción del cliente, la retroalimentación y la mejora continua.", tipo: "D" }
+      ]
+    }
+  ];
+
+  let preguntaActual = 0;
+  let respuestasUsuario = new Array(preguntas.length).fill(null);
+
+  const indicadorPregunta = document.getElementById('indicador-pregunta');
+  const barraProgreso = document.getElementById('barra-progreso');
+  const textoPregunta = document.getElementById('texto-pregunta');
+  const opcionesContainer = document.getElementById('opciones-container');
+  const btnAnterior = document.getElementById('btn-anterior');
+  const btnSiguiente = document.getElementById('btn-siguiente');
+  const barrasResultados = document.getElementById('barras-resultados');
+  const sugerenciaFinal = document.getElementById('sugerencia-final');
+
+  function renderizarPregunta() {
+    const q = preguntas[preguntaActual];
+    indicadorPregunta.textContent = `Pregunta ${preguntaActual + 1} de ${preguntas.length}`;
+    barraProgreso.style.width = `${((preguntaActual + 1) / preguntas.length) * 100}%`;
+    textoPregunta.textContent = q.pregunta;
+
+    opcionesContainer.innerHTML = '';
+    q.opciones.forEach((op) => {
+      const seleccionada = respuestasUsuario[preguntaActual] === op.tipo;
+      const estiloBorde = seleccionada ? 'border: 2px solid #ffeb3b; background: rgba(92,107,192,0.5);' : 'border: 1px solid rgba(159,216,255,0.2); background: rgba(40,53,147,0.4);';
+      
+      const div = document.createElement('div');
+      div.className = 'opcion-encuesta';
+      div.style.cssText = `padding: 10px 12px; border-radius: 8px; font-size: 12px; color: #fff; cursor: pointer; ${estiloBorde}`;
+      div.innerHTML = `<label style="cursor: pointer; display: flex; align-items: center; gap: 8px;"><input type="radio" name="p${preguntaActual}" value="${op.tipo}" ${seleccionada ? 'checked' : ''} style="cursor: pointer;"> ${op.texto}</label>`;
+      
+      div.addEventListener('click', () => {
+        respuestasUsuario[preguntaActual] = op.tipo;
+        renderizarPregunta();
+        calcularResultados();
+      });
+
+      opcionesContainer.appendChild(div);
+    });
+
+    btnAnterior.style.display = preguntaActual === 0 ? 'none' : 'block';
+    btnSiguiente.textContent = preguntaActual === preguntas.length - 1 ? 'Finalizar' : 'Siguiente';
+  }
+
+  function calcularResultados() {
+    let conteo = { A: 0, B: 0, C: 0, D: 0 };
+    respuestasUsuario.forEach(r => {
+      if (r) conteo[r]++;
+    });
+
+    const totalRespondidas = respuestasUsuario.filter(r => r !== null).length;
+    if (totalRespondidas === 0) return;
+
+    let pA = Math.round((conteo.A / totalRespondidas) * 100);
+    let pB = Math.round((conteo.B / totalRespondidas) * 100);
+    let pC = Math.round((conteo.C / totalRespondidas) * 100);
+    let pD = Math.round((conteo.D / totalRespondidas) * 100);
+
+    barrasResultados.innerHTML = `
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #fff; margin-bottom: 4px;">
+          <span>Scrum</span><span>${pC}%</span>
+        </div>
+        <div style="background: rgba(0,0,0,0.4); height: 8px; border-radius: 4px; overflow: hidden;">
+          <div style="background: #5c6bc0; width: ${pC}%; height: 100%;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #fff; margin-bottom: 4px;">
+          <span>Kanban</span><span>${pD}%</span>
+        </div>
+        <div style="background: rgba(0,0,0,0.4); height: 8px; border-radius: 4px; overflow: hidden;">
+          <div style="background: #5c6bc0; width: ${pD}%; height: 100%;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #fff; margin-bottom: 4px;">
+          <span>Cascada</span><span>${pA}%</span>
+        </div>
+        <div style="background: rgba(0,0,0,0.4); height: 8px; border-radius: 4px; overflow: hidden;">
+          <div style="background: #5c6bc0; width: ${pA}%; height: 100%;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #fff; margin-bottom: 4px;">
+          <span>Modelo en V</span><span>${pB}%</span>
+        </div>
+        <div style="background: rgba(0,0,0,0.4); height: 8px; border-radius: 4px; overflow: hidden;">
+          <div style="background: #5c6bc0; width: ${pB}%; height: 100%;"></div>
+        </div>
+      </div>
+    `;
+
+    // Reglas de sugerencia adaptadas al total de 8 preguntas (mayoría clara a partir de 5 respuestas)
+    let recomendacion = "Metodología híbrida o adaptada al proyecto";
+    if (conteo.A >= 5) recomendacion = "Cascada (Waterfall)";
+    else if (conteo.B >= 5) recomendacion = "Modelo en V";
+    else if (conteo.C >= 5) recomendacion = "Scrum";
+    else if (conteo.D >= 5) recomendacion = "Kanban";
+    else if (conteo.A >= 4 && conteo.B >= 4) recomendacion = "Cascada o Modelo en V";
+    else if (conteo.C >= 4 && conteo.D >= 4) recomendacion = "Scrum o Kanban";
+    else if ((conteo.A + conteo.B) >= 4 && (conteo.C + conteo.D) >= 4) recomendacion = "Metodología híbrida";
+
+    sugerenciaFinal.textContent = `Sugerencia: ${recomendacion}.`;
+  }
+
+  btnSiguiente.addEventListener('click', () => {
+    if (respuestasUsuario[preguntaActual] === null) {
+      alert("Por favor, selecciona una opción antes de continuar.");
+      return;
+    }
+    if (preguntaActual < preguntas.length - 1) {
+      preguntaActual++;
+      renderizarPregunta();
+    } else {
+      alert("¡Encuesta finalizada! Revisá los resultados detallados en el panel derecho.");
+    }
+  });
+
+  btnAnterior.addEventListener('click', () => {
+    if (preguntaActual > 0) {
+      preguntaActual--;
+      renderizarPregunta();
+    }
+  });
+
+  renderizarPregunta();
+});
+</script>
+
 </body>
 </html>

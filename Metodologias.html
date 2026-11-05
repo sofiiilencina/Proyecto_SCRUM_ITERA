@@ -71,8 +71,277 @@
 
 <main>
     
+  <!-- US-10: Sección Profunda de Scrum -->
+  <section id="scrum">
+    <h1>Scrum a Detalle</h1>
+    <div class="intro1">
+      Scrum es un marco de trabajo ágil adaptativo orientado a la entrega continua de valor en entornos de alta 
+      incertidumbre. Se organiza el trabajo en iteraciones de tiempo fijo denominadas “Sprints” y sus fundamentos 
+      coinciden con los del Manifiesto Agil: la transparencia, la inspección, la adaptación y la comunicación. Se aplica
+       especialmente en proyectos complejos cuyos requisitos pueden cambiar durante el desarrollo, como la 
+       creación de sistemas informáticos, aplicaciones web y productos digitales. Permite entregar resultados 
+       funcionales de manera incremental, detectar problemas tempranamente, adaptarse a nuevas necesidades y 
+       mejorar continuamente la colaboración entre los integrantes del equipo. 
+    </div>
+
+    <!-- Navegación interna por bloques temáticos -->
+    <nav class="menu-flotante-agil" style="margin-bottom: 25px;">
+      <a href="#scrum-roles">Roles</a>
+      <a href="#scrum-eventos">Eventos y Ceremonias</a>
+      <a href="#scrum-artefactos">Artefactos</a>
+    </nav>
+
+    <!-- 1. Roles -->
+    <div id="scrum-roles" style="scroll-margin-top: 130px; margin-bottom: 30px;">
+      <h2>Roles en Scrum</h2>
+      <div class="grilla-tradicional-vertical" style="display: flex; flex-direction: column; gap: 15px;">
+        <div class="tarjeta-modelo">
+          <h3>Propietario del Producto (Product Owner)</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;">Responsable de maximizar el valor del producto y de gestionar el “Product Backlog” o Pila del Producto. Actúa como la voz del cliente y de las partes interesadas, priorizando las funcionalidades según las necesidades del negocio, traduciendo del lenguaje coloquial al técnico, y viceversa.</p>
+        </div>
+        <div class="tarjeta-modelo">
+          <h3>Scrum Master</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;">Líder que sirve al equipo y a la organización. Asegura la adopción de los principios de Scrum, facilita los eventos y se encarga de remover los impedimentos que obstaculicen el avance del desarrollo.</p>
+        </div>
+        <div class="tarjeta-modelo">
+          <h3>Desarrolladores</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;">Equipo multidisciplinario y autogestionado con las habilidades necesarias para transformar los elementos de la Pila del Producto en un incremento funcional y utilizable en cada Sprint. Contiene programadores, diseñadores y testers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Eventos / Cronograma Interactivo del Sprint -->
+    <div id="scrum-eventos" style="scroll-margin-top: 130px; margin-bottom: 30px;">
+      <h2>Eventos y Ceremonias</h2>
+
+      <!-- Diagrama interactivo del Sprint -->
+      <div class="timeline-horizontal" style="display: flex; justify-content: space-between; gap: 8px; background-color: rgba(26, 35, 126, 0.4); padding: 12px; border-radius: 16px; border: 1px solid rgba(159, 216, 255, 0.2); cursor: pointer;">
+        <div class="paso-sprint activo" data-index="0" style="flex: 1; text-align: center; padding: 10px; background: rgba(40, 53, 147, 0.7); border: 2px solid #5c6bc0; border-radius: 10px; color: #fff; font-size: 13px; font-weight: bold;">
+          Sprint (General)
+        </div>
+        <div class="paso-sprint" data-index="1" style="flex: 1; text-align: center; padding: 10px; background: rgba(40, 53, 147, 0.7); border: 2px solid #5c6bc0; border-radius: 10px; color: #fff; font-size: 13px; font-weight: bold;">
+          Planificación
+        </div>
+        <div class="paso-sprint" data-index="2" style="flex: 1; text-align: center; padding: 10px; background: rgba(40, 53, 147, 0.7); border: 2px solid #5c6bc0; border-radius: 10px; color: #fff; font-size: 13px; font-weight: bold;">
+          Daily Scrum
+        </div>
+        <div class="paso-sprint" data-index="3" style="flex: 1; text-align: center; padding: 10px; background: rgba(40, 53, 147, 0.7); border: 2px solid #5c6bc0; border-radius: 10px; color: #fff; font-size: 13px; font-weight: bold;">
+          Sprint Review
+        </div>
+        <div class="paso-sprint" data-index="4" style="flex: 1; text-align: center; padding: 10px; background: rgba(40, 53, 147, 0.7); border: 2px solid #5c6bc0; border-radius: 10px; color: #fff; font-size: 13px; font-weight: bold;">
+          Retrospectiva
+        </div>
+      </div>
+
+      <!-- Panel de visualización dinámica del evento -->
+      <div class="panel-sprint" style="margin-top: 15px; background: linear-gradient(135deg, #3e2dd8, #282878); border: 1px solid rgba(159, 216, 255, 0.3); border-radius: 18px; padding: 24px;">
+        <div class="card-evento-sprint activo" data-index="0">
+          <h3 style="color: #9fd8ff; margin-bottom: 8px;">El Sprint</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;"><strong>Duración sugerida:</strong> Habitualmente de 1 a 4 semanas.<br><strong>Objetivo:</strong> Ciclo de desarrollo en el que se crea un incremento de producto terminado y de valor.</p>
+        </div>
+        <div class="card-evento-sprint" data-index="1" style="display:none;">
+          <h3 style="color: #9fd8ff; margin-bottom: 8px;">Planificación del Sprint (Sprint Planning)</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;"><strong>Duración sugerida:</strong> 30 minutos.<br><strong>Objetivo:</strong> Se define el objetivo de la iteración y se seleccionan las historias de usuario a completar en esta fase.</p>
+        </div>
+        <div class="card-evento-sprint" data-index="2" style="display:none;">
+          <h3 style="color: #9fd8ff; margin-bottom: 8px;">SCRUM Diario (Daily Scrum)</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;"><strong>Duración sugerida:</strong> 15 minutos máximos.<br><strong>Objetivo:</strong> Reunión diaria en la que el equipo sincroniza sus actividades, inspecciona el progreso hacia el objetivo del Sprint e identifica bloqueos.</p>
+        </div>
+        <div class="card-evento-sprint" data-index="3" style="display:none;">
+          <h3 style="color: #9fd8ff; margin-bottom: 8px;">Revisión del Sprint (Sprint Review)</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;"><strong>Duración sugerida:</strong> 30 minutos.<br><strong>Objetivo:</strong> Evento al finalizar el Sprint donde se presenta el incremento completado a las partes interesadas (clientes/PO) para obtener retroalimentación y adaptar el Product Backlog.</p>
+        </div>
+        <div class="card-evento-sprint" data-index="4" style="display:none;">
+          <h3 style="color: #9fd8ff; margin-bottom: 8px;">Retrospectiva del Sprint (Sprint Retrospective)</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;"><strong>Duración sugerida:</strong> 30 minutos.<br><strong>Objetivo:</strong> Espacio de inspección interna donde el equipo analiza su forma de trabajo, fortalezas y áreas de mejora para implementar optimizaciones en el siguiente ciclo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Artefactos -->
+    <div id="scrum-artefactos" style="scroll-margin-top: 130px; margin-bottom: 30px;">
+      <h2>Artefactos Scrum</h2>
+      <div class="grilla-tradicional-vertical" style="display: flex; flex-direction: column; gap: 15px;">
+        <div class="tarjeta-modelo">
+          <h3>Pila del Producto (Product Backlog)</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;">Lista priorizada y evolutiva de todos los requerimientos, mejoras y correcciones necesarios para el producto.</p>
+        </div>
+        <div class="tarjeta-modelo">
+          <h3>Pila del Sprint (Sprint Backlog)</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;">Conjunto de elementos seleccionados del Product Backlog para el Sprint actual, acompañado de un plan de trabajo detallado para alcanzar el objetivo.</p>
+        </div>
+        <div class="tarjeta-modelo">
+          <h3>Incremento</h3>
+          <p style="font-size: 13px; color: #dcdcff; line-height: 1.5;">Suma de todos los elementos del Product 
+            Backlog completados durante el Sprint y los anteriores, cumpliendo con la Definición de Hecho 
+            (Definition of Done), lo que representa al conjunto criterios y condiciones que el incremento debe 
+            cumplir para considerarse terminado, garantizando que alcanza los estándares de calidad esperados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- US-11: Sección Profunda de Kanban -->
+  <section id="kanban" style="margin-top: 50px;">
+    <h1>Kanban: gestión visual del flujo</h1>
+    <div class="intro1">
+      Kanban visualiza el trabajo en un tablero y limita el trabajo en curso (WIP). Hacé clic en una tarjeta para seleccionarla y luego hacé clic en la columna de destino.
+    </div>
+
+    <div class="tarjeta-modelo" style="margin-top: 20px;">
+      
+      <!-- Contenedor general del tablero Kanban -->
+      <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; border: 1px solid rgba(159,216,255,0.2);">
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+          
+          <!-- Columna 1: Por hacer -->
+          <div class="kanban-columna" data-columna="por-hacer" style="background: rgba(40,53,147,0.4); padding: 15px; border-radius: 10px; min-height: 250px; border: 1px solid rgba(159,216,255,0.1); cursor: pointer;">
+            <h4 style="color: #9fd8ff; font-size: 14px; margin-bottom: 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">Por hacer</h4>
+            <div class="kanban-items" style="display: flex; flex-direction: column; gap: 10px; min-height: 180px;">
+              <div class="tarjeta-kanban" draggable="true" style="background: #283593; padding: 10px 12px; border-radius: 8px; font-size: 12px; color: #fff; border: 1px solid rgba(159,216,255,0.3);">
+                Escribir casos de prueba
+              </div>
+              <div class="tarjeta-kanban" draggable="true" style="background: #283593; padding: 10px 12px; border-radius: 8px; font-size: 12px; color: #fff; border: 1px solid rgba(159,216,255,0.3);">
+                Revisar el glosario
+              </div>
+              <div class="tarjeta-kanban" draggable="true" style="background: #283593; padding: 10px 12px; border-radius: 8px; font-size: 12px; color: #fff; border: 1px solid rgba(159,216,255,0.3);">
+                Diseñar pantalla de contacto
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna 2: En proceso (Con límite WIP 2) -->
+          <div class="kanban-columna" data-columna="en-proceso" style="background: rgba(40,53,147,0.4); padding: 15px; border-radius: 10px; min-height: 250px; border: 1px solid rgba(159,216,255,0.1); cursor: pointer;">
+            <h4 style="color: #9fd8ff; font-size: 14px; margin-bottom: 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+              En proceso <span style="font-size: 11px; background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; color: #ffeb3b;">WIP <span id="wip-contador">2</span>/2</span>
+            </h4>
+            <div class="kanban-items" style="display: flex; flex-direction: column; gap: 10px; min-height: 180px;">
+              <div class="tarjeta-kanban" draggable="true" style="background: #283593; padding: 10px 12px; border-radius: 8px; font-size: 12px; color: #fff; border: 1px solid rgba(159,216,255,0.3);">
+                Maquetar comparador
+              </div>
+              <div class="tarjeta-kanban" draggable="true" style="background: #283593; padding: 10px 12px; border-radius: 8px; font-size: 12px; color: #fff; border: 1px solid rgba(159,216,255,0.3);">
+                Corregir error de login
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna 3: Hecho -->
+          <div class="kanban-columna" data-columna="hecho" style="background: rgba(40,53,147,0.4); padding: 15px; border-radius: 10px; min-height: 250px; border: 1px solid rgba(159,216,255,0.1); cursor: pointer;">
+            <h4 style="color: #9fd8ff; font-size: 14px; margin-bottom: 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">Hecho</h4>
+            <div class="kanban-items" style="display: flex; flex-direction: column; gap: 10px; min-height: 180px;">
+              <div class="tarjeta-kanban" draggable="true" style="background: #283593; padding: 10px 12px; border-radius: 8px; font-size: 12px; color: #fff; border: 1px solid rgba(159,216,255,0.3);">
+                Menú de navegación
+              </div>
+              <div class="tarjeta-kanban" draggable="true" style="background: #283593; padding: 10px 12px; border-radius: 8px; font-size: 12px; color: #fff; border: 1px solid rgba(159,216,255,0.3);">
+                Página de inicio
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Alerta de límite WIP -->
+        <div id="alerta-wip" style="display: none; margin-top: 15px; background: rgba(244, 67, 54, 0.2); border: 1px solid #f44336; padding: 10px 15px; border-radius: 8px; font-size: 12px; color: #ffccbc; align-items: center; gap: 8px;">
+          <span>⚠️</span> <span><strong>Límite WIP alcanzado:</strong> "En proceso" admite máximo 2 tarjetas. Hay que terminar una antes de empezar otra para evitar cuellos de botella.</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <script src="JS/main.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  
+  /* 1. Cronograma del Sprint (US-10) */
+  const pasosSprint = document.querySelectorAll('.paso-sprint');
+  const cardsSprint = document.querySelectorAll('.card-evento-sprint');
+
+  if (pasosSprint.length > 0) {
+    pasosSprint.forEach((paso, index) => {
+      paso.addEventListener('click', () => {
+        pasosSprint.forEach(p => p.style.background = 'rgba(40, 53, 147, 0.7)');
+        paso.style.background = 'linear-gradient(135deg, #5c6bc0, #3949ab)';
+        
+        cardsSprint.forEach(card => card.style.display = 'none');
+        if (cardsSprint[index]) cardsSprint[index].style.display = 'block';
+      });
+    });
+  }
+
+
+  /* 2. Tablero Kanban por Arrastre Real (Drag and Drop) (US-11) */
+  let tarjetaArrastrada = null;
+
+  const tarjetas = document.querySelectorAll('.tarjeta-kanban');
+  const contenedoresColumnas = document.querySelectorAll('.kanban-items');
+  const contadorWip = document.getElementById('wip-contador');
+  const alertaWip = document.getElementById('alerta-wip');
+
+  function actualizarWip() {
+    const columnaEnProceso = document.querySelector('[data-columna="en-proceso"] .kanban-items');
+    if (!columnaEnProceso) return;
+    const cantidad = columnaEnProceso.children.length;
+    if (contadorWip) contadorWip.textContent = cantidad;
+  }
+
+  tarjetas.forEach(tarjeta => {
+    tarjeta.addEventListener('dragstart', function (e) {
+      tarjetaArrastrada = this;
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', ''); // Necesario para compatibilidad
+      setTimeout(() => this.style.opacity = '0.4', 0);
+    });
+
+    tarjeta.addEventListener('dragend', function () {
+      this.style.opacity = '1';
+      tarjetaArrastrada = null;
+      actualizarWip();
+    });
+  });
+
+  contenedoresColumnas.forEach(contenedor => {
+    contenedor.addEventListener('dragover', function (e) {
+      e.preventDefault(); // Permite que el contenedor reciba el elemento arrastrado
+      e.dataTransfer.dropEffect = 'move';
+    });
+
+    contenedor.addEventListener('drop', function (e) {
+      e.preventDefault();
+      if (tarjetaArrastrada) {
+        const colPadre = this.closest('.kanban-columna');
+        const esEnProceso = colPadre.getAttribute('data-columna') === 'en-proceso';
+        const tarjetaOrigenEnProceso = tarjetaArrastrada.closest('.kanban-columna').getAttribute('data-columna') === 'en-proceso';
+
+        // Validación de límite WIP (Máximo 2 en proceso)
+        if (esEnProceso && !tarjetaOrigenEnProceso && this.children.length >= 2) {
+          if (alertaWip) {
+            alertaWip.style.display = 'flex';
+            alertaWip.style.border = '2px solid #ff1744';
+            alertaWip.style.backgroundColor = 'rgba(244, 67, 54, 0.35)';
+            
+            setTimeout(() => {
+              alertaWip.style.border = '1px solid #f44336';
+              alertaWip.style.backgroundColor = 'rgba(244, 67, 54, 0.2)';
+            }, 600);
+          }
+          return;
+        }
+
+        // Si el movimiento es válido, ocultamos la advertencia y soltamos la tarjeta
+        if (alertaWip) alertaWip.style.display = 'none';
+        this.appendChild(tarjetaArrastrada);
+        actualizarWip();
+      }
+    });
+  });
+
+  actualizarWip();
+});
+</script>
 </body>
 </html>

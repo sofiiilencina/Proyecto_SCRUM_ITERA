@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ITERA - Inicio</title>
+  <title>ITERA - Procesos de Desarrollo de Software</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -70,9 +70,405 @@
 </nav>
 
 <main>
-    
+  
+  <!-- US-05: Ciclo de Vida del Desarrollo de Software (SDLC) -->
+  <section id="sdlc">
+    <h1>Ciclo de Vida del Desarrollo de Software (SDLC)</h1>
+    <div class="intro1">
+      El Ciclo de Vida del Desarrollo de Software (Software Development Life Cycle) es la estructura organizativa y 
+      metodológica que define las fases sucesivas necesarias para planificar, construir, probar, desplegar y mantener 
+      aplicaciones informáticas de manera controlada. El SDLC es fundamental porque proporciona una estructura 
+      predecible que minimiza riesgos, optimiza costos y reduce tiempos de entrega. 
+    </div>
+
+    <div class="sdlc-contenedor-horizontal">
+      <div class="timeline-horizontal">
+        <div class="paso-sdlc activo" data-index="0">
+          <span class="num">1</span>
+          <span class="titulo-paso">Requisitos</span>
+        </div>
+        <div class="paso-sdlc" data-index="1">
+          <span class="num">2</span>
+          <span class="titulo-paso">Diseño</span>
+        </div>
+        <div class="paso-sdlc" data-index="2">
+          <span class="num">3</span>
+          <span class="titulo-paso">Programación</span>
+        </div>
+        <div class="paso-sdlc" data-index="3">
+          <span class="num">4</span>
+          <span class="titulo-paso">Pruebas</span>
+        </div>
+        <div class="paso-sdlc" data-index="4">
+          <span class="num">5</span>
+          <span class="titulo-paso">Despliegue</span>
+        </div>
+        <div class="paso-sdlc" data-index="5">
+          <span class="num">6</span>
+          <span class="titulo-paso">Mantenimiento</span>
+        </div>
+      </div>
+
+      <div class="sdlc-panel-horizontal">
+        <div class="card-sdlc activa" data-index="0">
+          <h3>Análisis y definición de requisitos</h3>
+          <p>Relevamiento de necesidades técnicas y de negocio con los usuarios, además de análisis de costos, 
+            beneficios y recursos disponibles. El equipo de desarrollo recopila requisitos de varias partes interesadas, 
+            como clientes, expertos internos y externos, así como directivos, para crear un documento de 
+            especificaciones con los requisitos del software.</p>
+        </div>
+        <div class="card-sdlc" data-index="1">
+          <h3>Diseño de arquitectura e interfaces</h3>
+          <p>Según el análisis de requerimientos, se identifican las mejores maneras 
+            (ya sea por eficiencia o comodidad) de implementar el software, lo que incluye: <br>
+          - Definición de la estructura interna del sistema (elección de tecnologías, integración de herramientas ya 
+          existentes). <br>
+          - Modelado de datos (diferentes tipos de diagrama, según enfoque de BD, arquitectura general, etc). <br>
+          - Diseño UX/UI (interfaz visual, organización del contenido).</p>
+        </div>
+        <div class="card-sdlc" data-index="2">
+          <h3>Programación y codificación</h3>
+          <p>Traducción de los requisitos (junto al diseño) a código ejecutable. Según el enfoque de desarrollo, se 
+            priorizan diferentes funcionalidades.</p>
+        </div>
+        <div class="card-sdlc" data-index="3">
+          <h3>Aseguramiento de calidad y pruebas</h3>
+          <p>Se combinan los diferentes tipos de pruebas existentes, incluyendo pruebas manuales y automáticas, 
+            para realizar una verificación funcional y no funcional del software. Se busca detectar errores, fallas y 
+            comprobar el grado de fidelidad de lo desarrollado con los requerimientos del cliente.</p>
+        </div>
+        <div class="card-sdlc" data-index="4">
+          <h3>Despliegue e implementación</h3>
+          <p>Lanzamiento controlado del producto en servidores de producción. Generalmente se copia el proyecto 
+            del software para lanzarlo, manteniendo una copia en desarrollo o en “entorno de compilación”.</p>
+        </div>
+        <div class="card-sdlc" data-index="5">
+          <h3>Mantenimiento y evolución continua</h3>
+          <p>Se corrigen errores, se resuelven problemas de los clientes y se administran los cambios hechos en el 
+            software. Además, el equipo supervisa el rendimiento general del sistema, la seguridad y la experiencia del 
+            usuario para identificar nuevas maneras de mejorar el software existente, agregando funcionalidades si así 
+            se requiriese.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- US-06 & US-07: Modelos Tradicionales e Ilustraciones -->
+  <section id="modelos">
+    <h1>Modelos Tradicionales</h1>
+
+    <nav class="menu-flotante-agil" style="margin-bottom: 25px;">
+      <a href="#sub-cascada">Modelo Cascada</a>
+      <a href="#sub-modelov">Modelo en V</a>
+      <a href="#sub-iterativo">Iterativo e Incremental</a>
+    </nav>
+
+    <div class="grilla-tradicional-vertical" style="display: flex; flex-direction: column; gap: 25px;">
+      
+      <!-- 1. Modelo en Cascada -->
+      <div class="tarjeta-modelo" id="sub-cascada" style="scroll-margin-top: 130px;">
+        <div class="header-modelo">
+          <h3>Modelo en Cascada (Waterfall)</h3>
+          <div class="diagrama-mini trigger-lightbox" data-img="images/waterfall.png" data-titulo="Modelo en Cascada (Fases en escalera)">
+            <svg viewBox="0 0 60 38" fill="none" stroke="#9fd8ff" stroke-width="2" aria-label="Diagrama esquemático del Modelo en Cascada"><path d="M5 5h15v8h15v8h15v12" /></svg>
+          </div>
+        </div>
+
+        <div class="info-modelo" style="font-size: 13px; color: #dcdcff; margin-bottom: 14px; line-height: 1.5;">
+          Es un enfoque metodológico estricto, secuencial y altamente documentado. Cada fase del SDLC debe 
+          completarse, ser revisada y aprobada formalmente antes de poder avanzar a la siguiente etapa.
+        </div>
+
+        <div class="bloque-pros-cons">
+          <div class="ventaja">✓ <strong>Ventajas:</strong> simple, bien documentado y fácil de gestionar en 
+            proyectos de alcance claro.</div>
+          <div class="desventaja">✕ <strong>Desventajas:</strong> no admite cambios con facilidad; retrasa la 
+            entrega de software ejecutable hasta etapas muy avanzadas, haciendo costosa la incorporación de 
+            modificaciones tardías.</div>
+        </div>
+
+        <div class="cuando-usar">
+          <strong>Cuándo usarlo:</strong> Ideal para proyectos con requerimientos estables, fijos y 
+          bien comprendidos desde el inicio.
+        </div>
+      </div>
+
+      <!-- 2. Modelo en V -->
+      <div class="tarjeta-modelo" id="sub-modelov" style="scroll-margin-top: 130px;">
+        <div class="header-modelo">
+          <h3>Modelo en V (V-Model)</h3>
+          <div class="diagrama-mini trigger-lightbox" data-img="images/model_V.jpeg" data-titulo="Modelo en V (Desarrollo y Pruebas)">
+            <svg viewBox="0 0 60 38" fill="none" stroke="#9fd8ff" stroke-width="2" aria-label="Diagrama esquemático del Modelo en V"><path d="M5 5l25 28L55 5" /></svg>
+          </div>
+        </div>
+
+        <div class="info-modelo" style="font-size: 13px; color: #dcdcff; margin-bottom: 14px; line-height: 1.5;">
+          Considerado una extensión o variación directa del modelo en cascada que enfatiza la relación entre el 
+          desarrollo y el aseguramiento de calidad, representando gráficamente el ciclo con forma de "V".<br><br>
+          • <strong>Desarrollo (Lado Izquierdo):</strong> Comienza con el <em>análisis de requisitos</em>, continúa con el <em>análisis funcional</em>, sigue con el <em>diseño arquitectónico</em> y termina con el <em>diseño detallado</em>.<br>
+          • <strong>Codificación (Vértice):</strong> Se realiza la programación y desarrollo del software en funcionalidades concretas.<br>
+          • <strong>Pruebas (Lado Derecho):</strong> Se ejecutan en orden ascendente (pruebas unitarias, de integración, de sistema y de aceptación).
+        </div>
+
+        <div class="bloque-pros-cons">
+          <div class="ventaja">✓ <strong>Ventajas:</strong> Cada fase de desarrollo tiene su prueba asociada y planificada de antemano.</div>
+          <div class="desventaja">✕ <strong>Desventajas:</strong> Estructura rígida y poco adaptable ante modificaciones imprevistas.</div>
+        </div>
+
+        <div class="cuando-usar">
+          <strong>Cuándo usarlo:</strong> Sistemas críticos o regulados con fuerte foco en la verificación y trazabilidad.
+        </div>
+      </div>
+
+      <!-- 3. Modelo Iterativo e Incremental -->
+      <div class="tarjeta-modelo" id="sub-iterativo" style="scroll-margin-top: 130px;">
+        <div class="header-modelo">
+          <h3>Modelo Iterativo e Incremental</h3>
+          <div class="diagrama-mini trigger-lightbox" data-img="images/iterativo.jpeg" data-titulo="Modelo Iterativo e Incremental">
+            <svg viewBox="0 0 60 38" fill="none" stroke="#9fd8ff" stroke-width="2" aria-label="Diagrama esquemático del Modelo Iterativo e Incremental"><path d="M10 25c5-10 15-15 25-5s15 5 15-5" /></svg>
+          </div>
+        </div>
+
+        <div class="info-modelo" style="font-size: 13px; color: #dcdcff; margin-bottom: 14px; line-height: 1.5;">
+          Estrategia que aborda el desarrollo del sistema mediante ciclos repetitivos (iteraciones) de corta o mediana duración. En cada ciclo se desarrolla, prueba y entrega un subsistema funcional que añade nuevo valor (incremento).
+        </div>
+
+        <div class="bloque-pros-cons">
+          <div class="ventaja">✓ <strong>Ventajas:</strong> Permite obtener retroalimentación temprana del cliente y validar el comportamiento de la arquitectura de forma progresiva.</div>
+          <div class="desventaja">✕ <strong>Desventajas:</strong> Exige una planificación rigurosa y control de dependencias en cada iteración.</div>
+        </div>
+
+        <div class="cuando-usar">
+          <strong>Cuándo usarlo:</strong> Proyectos cuyos requisitos se refinan y evolucionan con el tiempo.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- US-08 & US-09: Metodologías Ágiles, Manifiesto, Principios, Roles, Ceremonias, Artefactos e Ilustraciones -->
+  <section id="agiles">
+    <h1>Metodologías ágiles</h1>
+
+    <nav class="menu-flotante-agil">
+      <a href="#bloque-valores">Valores</a>
+      <a href="#bloque-principios">Principios</a>
+      <a href="#sub-scrum">SCRUM</a>
+      <a href="#sub-kanban">Kanban</a>
+      <a href="#sub-xp">XP</a>
+    </nav>
+
+    <div id="bloque-valores" style="scroll-margin-top: 130px;">
+      <h2>Los 4 valores del Manifiesto Ágil</h2>
+      <div class="grilla-valores">
+        <div class="card-valor">
+          <h4>Valor 1</h4>
+          <p>Los individuos y su interacción por encima de los procesos y las herramientas.</p>
+        </div>
+        <div class="card-valor">
+          <h4>Valor 2</h4>
+          <p>El software funciona por encima de la documentación exhaustiva.</p>
+        </div>
+        <div class="card-valor">
+          <h4>Valor 3</h4>
+          <p>La colaboración con el cliente por encima de la negociación contractual.</p>
+        </div>
+        <div class="card-valor">
+          <h4>Valor 4</h4>
+          <p>La respuesta al cambio está por encima del seguimiento de un plan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="bloque-principios" style="scroll-margin-top: 130px; margin-top: 25px;">
+      <h2>Los 12 principios del Manifiesto Ágil</h2>
+      
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>1.</strong> Nuestra principal prioridad es satisfacer al cliente a través de la entrega temprana y continua de software de valor.
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>2.</strong> Son bienvenidos los requisitos cambiantes, incluso si llegan tarde al desarrollo. Los procesos ágiles se doblegan al cambio como ventaja competitiva para el cliente. 
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>3.</strong> Entregar con frecuencia software que funcione, en periodos de un par de semanas hasta un par de meses, con preferencia en los períodos breves. 
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>4.</strong> Las personas del negocio y los desarrolladores deben trabajar juntos de forma cotidiana a través del proyecto.  
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>5.</strong> Construcción de proyectos en torno a individuos motivados, dándoles la oportunidad y el respaldo que necesitan y procurándoles confianza para que realicen la tarea. 
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>6.</strong> La forma más eficiente y efectiva de comunicar información de ida y vuelta dentro de un equipo de desarrollo es mediante la conversación cara a cara. 
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>7.</strong> El software que funciona es la principal medida del progreso.
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>8.</strong> Los procesos ágiles promueven el desarrollo sostenido. Los patrocinadores, desarrolladores y usuarios deben mantener un ritmo constante de forma indefinida. 
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>9.</strong> La atención continua a la excelencia técnica enaltece la agilidad.
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>10.</strong> La simplicidad como arte de maximizar la cantidad de trabajo que no se hace, es esencial.
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>11.</strong> Las mejores arquitecturas, requisitos y diseños emergen de equipos que se autoorganizan. 
+      </div>
+
+      <div class="sdlc-destacado" style="margin: 15px 0;"> 
+        <strong>12.</strong> En intervalos regulares, el equipo reflexiona sobre la forma de ser más efectivo y ajusta su conducta en consecuencia. 
+      </div>
+    </div>
+
+    <h2 style="margin-top: 35px;">Desglose de Metodologías Ágiles</h2>
+
+    <!-- Contenedor vertical para que funcionen los anclajes de la subbarra -->
+    <div style="display: flex; flex-direction: column; gap: 25px; margin-top: 20px;">
+      
+      <!-- 1. SCRUM -->
+      <div class="tarjeta-modelo" id="sub-scrum" style="scroll-margin-top: 130px;">
+        <div class="header-modelo">
+          <h3>SCRUM</h3>
+        </div>
+        <div class="info-modelo" style="font-size: 13px; color: #dcdcff; margin-bottom: 14px; line-height: 1.5;">
+          Es el marco ágil iterativo más utilizado en la actualidad para la gestión de proyectos complejos. Estructura el trabajo en ciclos de tiempo fijo llamados <strong>Sprints</strong> (de 1 a 4 semanas de duración).
+        </div>
+        <div class="bloque-pros-cons" style="font-size: 13px; color: #dcdcff; line-height: 1.5;">
+          <p><strong>Principios / Enfoque:</strong> Gestión de proyectos complejos mediante ciclos de tiempo fijo y mejora continua.</p>
+          <p><strong>Roles:</strong> Establece tres roles principales claramente delimitados: el Propietario del Producto (representante del negocio y dueño del backlog), el Scrum Master (facilitador del proceso y eliminador de impedimentos) y los Desarrolladores (equipo multidisciplinario de realización).</p>
+          <p><strong>Ceremonias:</strong> Se apoya en ceremonias estructuradas (Planificación del Sprint, Scrum Diario, Revisión del Sprint y Retrospectiva del Sprint).</p>
+          <p><strong>Artefactos:</strong> Artefactos transparentes que incluyen el Product Backlog, el Sprint Backlog y el Incremento.</p>
+        </div>
+        <div class="cuando-usar" style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.15);">
+          <span class="etiqueta trigger-lightbox" data-img="images/SCRUM.jpeg" data-titulo="Esquema: Ciclo del Sprint en Scrum" style="cursor: pointer; color: #9fd8ff; font-weight: bold;">Ver esquema ampliado del ciclo del Sprint</span>
+        </div>
+      </div>
+
+      <!-- 2. Kanban -->
+      <div class="tarjeta-modelo" id="sub-kanban" style="scroll-margin-top: 130px;">
+        <div class="header-modelo">
+          <h3>Kanban</h3>
+        </div>
+        <div class="info-modelo" style="font-size: 13px; color: #dcdcff; margin-bottom: 14px; line-height: 1.5;">
+          Método visual derivado de los sistemas de producción esbelta, enfocado en gestionar y optimizar el flujo de trabajo a través de tableros divididos en columnas que representan las distintas etapas del proceso.
+        </div>
+        <div class="bloque-pros-cons" style="font-size: 13px; color: #dcdcff; line-height: 1.5;">
+          <p><strong>Principios / Enfoque:</strong> Su principio fundamental radica en limitar la cantidad de Trabajo en Proceso (WIP - Work In Progress) para evitar cuellos de botella, equilibrar la capacidad operativa del equipo y lograr un flujo constante y predecible de entregables.</p>
+          <p><strong>Roles / Ceremonias:</strong> Se adapta a la estructura del equipo existente, gestionando la revisión continua de tareas y el flujo de trabajo.</p>
+          <p><strong>Artefactos:</strong> Tablero visual con columnas y tarjetas de trabajo asociadas.</p>
+        </div>
+        <div class="cuando-usar" style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.15);">
+          <span class="etiqueta trigger-lightbox" data-img="images/kanban.jpeg" data-titulo="Esquema: Tablero y Flujo Kanban" style="cursor: pointer; color: #9fd8ff; font-weight: bold;">Ver esquema ampliado del tablero Kanban</span>
+        </div>
+      </div>
+
+      <!-- 3. XP -->
+      <div class="tarjeta-modelo" id="sub-xp" style="scroll-margin-top: 130px;">
+        <div class="header-modelo">
+          <h3>XP (Extreme Programming)</h3>
+        </div>
+        <div class="info-modelo" style="font-size: 13px; color: #dcdcff; margin-bottom: 14px; line-height: 1.5;">
+          Metodología ágil orientada profundamente a la ingeniería de software y a la excelencia técnica del código.
+        </div>
+        <div class="bloque-pros-cons" style="font-size: 13px; color: #dcdcff; line-height: 1.5;">
+          <p><strong>Principios / Enfoque:</strong> Promueve prácticas rigurosas como el desarrollo guiado por pruebas (TDD - Test-Driven Development), 
+            la programación en pareja (Pair Programming), la integración continua (CI), la refactorización constante del 
+            diseño, las entregas en ciclos breves y la comunicación fluida y constante con el cliente para adaptarse sin 
+            fricción a requerimientos cambiantes.</p>
+          <p><strong>Roles / Ceremonias:</strong> Integración continua y colaboración estrecha en equipo.</p>
+          <p><strong>Artefactos:</strong> Historias de usuario, pruebas unitarias y código de calidad integrada.</p>
+        </div>
+        <div class="cuando-usar" style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.15);">
+          <span class="etiqueta trigger-lightbox" data-img="images/xp_bucle.png" data-titulo="Esquema: Bucle de XP" style="cursor: pointer; color: #9fd8ff; font-weight: bold;">Ver esquema ampliado del bucle de XP</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
+<!-- Modal Lightbox necesario para que las imágenes se desplieguen -->
+<div id="lightbox-modal" class="lightbox-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+  <div class="lightbox-contenido" style="background:#1a237e; padding:20px; border-radius:12px; max-width:90%; text-align:center; position:relative;">
+    <span id="cerrar-lightbox" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; color:#fff;">&times;</span>
+    <h3 id="lightbox-titulo" style="color:#9fd8ff; margin-bottom:15px;"></h3>
+    <img id="lightbox-img" src="" alt="Esquema ampliado" style="max-width:100%; max-height:80vh; border-radius:8px;">
+  </div>
+</div>
+
 <script src="JS/main.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const pasosSdlc = document.querySelectorAll('.timeline-horizontal .paso-sdlc');
+    const cardsSdlc = document.querySelectorAll('.sdlc-panel-horizontal .card-sdlc');
+
+    function activarPasoSdlc(index) {
+      pasosSdlc.forEach((paso, i) => {
+        paso.classList.toggle('activo', i === index);
+      });
+      cardsSdlc.forEach((card, i) => {
+        card.classList.toggle('activa', i === index);
+      });
+    }
+
+    pasosSdlc.forEach((paso, index) => {
+      paso.addEventListener('mouseenter', () => {
+        activarPasoSdlc(index);
+      });
+      paso.addEventListener('click', () => {
+        activarPasoSdlc(index);
+      });
+    });
+  });
+
+  // Lightbox modal (US-07, US-09)
+  document.addEventListener('DOMContentLoaded', function () {
+    const modalLightbox = document.getElementById('lightbox-modal');
+    const imagenLightbox = document.getElementById('lightbox-img');
+    const tituloLightbox = document.getElementById('lightbox-titulo');
+    const cerrarLightboxBtn = document.getElementById('cerrar-lightbox');
+
+    document.querySelectorAll('.trigger-lightbox').forEach(trigger => {
+      trigger.addEventListener('click', function () {
+        const srcImg = this.getAttribute('data-img');
+        const tituloImg = this.getAttribute('data-titulo');
+        if (imagenLightbox && modalLightbox) {
+          imagenLightbox.src = srcImg;
+          if (tituloLightbox) tituloLightbox.textContent = tituloImg || 'Esquema ilustrativo';
+          modalLightbox.style.display = 'flex';
+          modalLightbox.classList.add('activo');
+        }
+      });
+    });
+
+    if (cerrarLightboxBtn && modalLightbox) {
+      cerrarLightboxBtn.addEventListener('click', () => {
+        modalLightbox.style.display = 'none';
+        modalLightbox.classList.remove('activo');
+      });
+      modalLightbox.addEventListener('click', (e) => {
+        if (e.target === modalLightbox) {
+          modalLightbox.style.display = 'none';
+          modalLightbox.classList.remove('activo');
+        }
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
